@@ -1,0 +1,126 @@
+
+#head_table {
+	
+	background: #049DBF;
+}
+
+
+#table-wraper {
+	
+	position: relative;
+}
+
+#table-scroll {
+	
+	height: 395px;
+	overflow: auto;
+	margin-top: 20px;
+}
+
+#table-scroll table {
+	
+	width: 785px;
+	table-layout: fixed;
+}
+
+#table-scroll table thead {
+	
+	text-align: left;
+	font-weight: normal;
+}
+
+.text {
+	
+	position: absolute;
+	/*top: -20px;*/
+}
+
+.cell-value {
+	
+	text-align:center;
+}
+
+.bp-optimal {
+	
+	background: #00FF00
+}
+
+.bp-normal {
+	
+	background: #73E800
+}
+
+.bp-hochnormal {
+	
+	background: #EFFF00
+}
+
+.bp-hypertonie-grad1 {
+	
+	background: #FF5E00
+}
+
+.bp-hypertonie-grad2 {
+	
+	background: #E83400
+}
+
+.bp-hypertonie-grad3 {
+	
+	background: #FF0000
+}
+
+.bp-isolierte-systolische-hypertonie {
+	
+	background: #8D00FF
+}
+
+.kcal-ok {
+	
+	background: #00FF00
+}
+
+.kcal-alert {
+	
+	background: #FF0000
+}
+
+
+.gewicht-50 {
+	
+	background:#FF0000
+}
+
+.gewicht-30 {
+	
+	background: #E83400
+}
+
+.gewicht-20 {
+	
+	background: #FF5E00
+}
+
+.gewicht-10 {
+	
+	background: #EFFF00
+}
+
+.gewicht-ok {
+	
+	background: #00FF00
+}
+
+
+
+
+
+.td-cell-even {
+	
+	background: #99CCFF;
+}
+
+.td-cell-odd {
+	
+	background: #FFFFFF;
+}

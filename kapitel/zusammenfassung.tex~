@@ -1,0 +1,90 @@
+
+
+\chapter{Zusammenfassung / Ausblick} 
+
+
+W\"ahrend der Praxisarbeit und der Bachelorthesis wurde ein vielschichtiges Softwaresystem entwickelt,
+welches gleich mehrere bekannte und wichtige Architekturen, wie MVC und Client-Server und Technologien, 
+wie zum Beispiel Ajax vereint. 
+F\"ur die Erweiterung des Smartphones um Messsensoren, wie die K\"orperwaage oder das 
+Blutdruckmessger\"at wurde die Bluetooth-Schnittstelle verwendet.
+Die Daten\"ubertragung von Smartphone an einem Webserver geschieht unter dem Einsatz der REST-Architektur
+und die Messwerte werden auf einen MySQL-Datenbankserver persistent gespeichert.
+Die Benutzerschnittstelle der Webanwendung ist mit Ajax realisiert, was f\"ur mehr Interaktivit\"at und 
+eine bessere User Experience sorgt, da die Software aktiv auf den Benutzer reagiert.
+Dadurch bekommt der Benutzer das Gef\"uhl die Anwendung w\"urde wie eine Desktop-Anwendung direkt auf 
+seinem Rechner ausgef\"uhrt werden.
+Dabei muss die Software nicht auf einem Rechner installiert werden, sondern hier reicht schon ein 
+Ajax-f\"ahiger Webbrowser.
+Somit besteht auch nicht die Gefahr, dass die Software durch Viren gesch\"adigt werden kann.
+Die Android-Anwendung benutzt die Kamera auf der R\"uckseite des Smartphones als Barcodescanner.
+Damit wird es m\"oglich auf eine bequeme Art und Weise Lebensmittel zu identifizieren, ohne, dass man 
+m\"uhsam die EAN-Nummer oder sogar die Lebensmitteleigenschaften manuell eingeben muss. 
+Die Daten werden \"uber das Internet von einem Datenbankserver abgefragt
+und verwendet. 
+Da die Messsensoren in die Software \"uber Bluetooth-Technologie eingebunden sind,
+spart sich der Benutzer das Ablesen und Eingeben der Werte mit der Hand.
+Die Daten werden sicher \"uber Bluetooth \"ubertragen und in der Anwendung verwaltet.
+Die Software ist an Menschen mit einer gesundheitlichen Einschr\"ankung gerichtet
+und durch die erw\"ahnten F\"ahigkeiten hat sie eine unterst\"utzende Wirkung f\"ur den Benutzer.
+Sein Aufwand wird durch den Einsatz der erw\"ahnten Technologien minimiert, was ihn somit nicht 
+zus\"atzlich belastet.
+Dadurch, dass die Tagesprotokolle \"uber das Internet an den behandelnden Arzt geschickt werden, 
+verringert sich der Stressfaktor f\"ur den Patienten, da er nicht zu jeder Untersuchung einreisen muss.
+Auf der anderen Seite wird auch der Aufwand f\"ur den Arzt minimiert, der in besonders schweren F\"allen 
+auch \"oferts einen Hausbesuch machen muss.
+Durch die \"Ubersichtsfunktion und farbliche Untermalung der Messwerte bei Gefahren, 
+wird der Arzt auf die Patienten, die seine Betreuung im besonderen Ma\ss{}e erfordern, aufmerksam gemacht.
+Die Software steigert somit auch die Effizienz der Betreuung, da der Arzt sich mehr auf hochgradig 
+relevante F\"alle konzentrieren kann.
+Die verschiedenen Messsensoren f\"uhren zu einer aussagekr\"aftigeren Diagnose.
+Sollte der Patient sich nicht an die Vorgaben des Arztes halten und es vers\"aumen seine Mahlzeiten 
+gr\"undlich zu protokollieren, so w\"urden andere Messwerte \"uber sein K\"orpergewicht und seinen Blutdruck 
+darauf hinweisen.
+Es ist dennoch von gro\ss{}er Bedeutung, dass die Zusammenarbeit zwischen Arzt und Patient stimmig ist.
+Der Patient muss diszipliniert mit der Protokollierung umgehen und ehrlich sein,
+damit die Messwerte eine korrekte Aussage nicht verwischen.
+Mit der ambulanten Betreuung durch den Arzt und der Protokollierung hat der Patient eine bessere 
+\"Ubersicht und kann sich selbst besser kontrollieren, da er darauf aufmerksam gemacht wird, 
+wenn er zum Beispiel zu viel Nahrung zu sich nehmen sollte.
+Die Best\"atigung, dass sein Gesundheitszustand sich nach und nach bessert, wirkt auf den Patienten mit 
+Sicherheit auch positiv und es f\"ordert seine Genesung auf psychischer Ebene, 
+da er Resultate protokolliert vor sich hat.
+Die Arbeit hat gezeigt, dass ein handels\"ubliches Smartphone, ausgestattet mit den \"ublichen 
+Standardschnittstellen, in ein sehr umfangreiches und seri\"oses Projekt, 
+welches \"uber die Smartphone-Grenzen hinaus reicht, integriert werden kann.
+Nach Aussagen des Marktforschungsunternehmens \emph{International Data Corporation} (IDC)\cite{AndroidAnteile:01},
+ist Android mit 79,3\% das f\"uhrende Smartphonebetriebssystem weltweit. 
+Die Entscheidung, eine Software f\"ur Android zu implementieren, war deshalb richtig.
+Auf diese Weise wird eine breite Masse der Smartphonebenutzer erreicht.
+W\"ahrend der Bachelorarbeit entstanden einige Entwicklungsprobleme zwischen der Bodytel WeightTel 
+K\"orperwaage und der Android-Anwendung.
+Im Projekt wurde als Entwicklungsger\"at ein \emph{Samsung Galaxy S3} genutzt.
+Das Smartphone wurde schon zu Beginn mit der damals neusten Android-Version 4.1 aktualisiert.
+Es stellte sich heraus, dass die K\"orperwaage nicht mit dieser Android-Version zusammenarbeiten kann.
+Nachforschungen haben ergeben, dass bis zur Android-Version 4.04, die Firma Google f\"ur die Bluetoothfunktionalit\"at
+die freie Software \emph{BlueZ} \cite{BlueZ:01} verwendet hat.
+\emph{BlueZ} ist unter Linux die Standardimplementierung der Protkolle f\"ur den Bluetooth Stack.  
+Die h\"oheren Android-Versionen verwenden die Implementierung von \emph{Broadcom} \cite{Broadcom:01}.
+Der Broadcom Stack soll f\"ur Android speziell optimiert worden sein.
+Leider gibt es Ger\"ate, wie die WeightTel K\"orperwaage, die damit nicht kompatibel sind.
+Zur L\"osung des Problems im Projekt wurde ein Downgrade auf Android 4.04 vollzogen.
+Dies wurde auch vom Hersteller Bodytel empfohlen.
+Da die Messger\"ate auch in Zukunft verwendet werden sollten, muss eine andere L\"osung entworfen werden.
+Hier ergeben sich mehrere Ans\"atze.
+Die einfachste M\"oglichkeit w\"are, dem Benutzer eine manuelle Messdateneingabe anzubieten.
+Dieser w\"urde die Messwerte ablesen und sie in der Anwendung eintragen.
+Eine weitere M\"oglichkeit ist eine Art Homeserver zu entwickeln.
+Dieser Homeserver kann zum Beispiel auf einem Minicomputer, wie dem \emph{Raspberry Pi} \cite{rasppi:01} basieren.
+Der \emph{Raspberry Pi} w\"urde mit Linux arbeiten, wobei er als Basis bereits den BlueZ Stack nutzt.
+Der Homeserver w\"are eine zentrale Stelle, um die Messger\"ate zu erfassen 
+und w\"urde anschlie\ss{}end die Messwerte an das Smartphone \"uber Bluetooth senden.
+Ein dritter Vorschlag w\"are, einen eigenen Bluetooth Stack unter Verwendung der BlueZ-Bibliotheken zu entwickeln.
+Der Stack w\"urde von Andro
+
+Nach Au\ss{}en w\"urde der Stack mit den Messger\"aten kommunizieren und w\"urde eine hohe Kompatibilit\"at bieten.
+Nach Innen w\"urde der Stack mit der Android-Anwendung und diese dann mit dem Ger\"ate-eigenen Bluetoothstack arbeiten.
+Beim Ausblick in die Zukunft, k\"onnte die Software mit weiterer Funktionalit\"at und Messsensoren ausgebaut werden.
+Zum Beispiel durch das erfassen von Blutzuckerwerten oder als Langzeit-EKG.
+Hierbei sollte eine Bedarfsanalyse durchgef\"uhrt und ein Konzept f\"ur eine umfangreiche Platform zur f\"orderung
+der Gesundheit ausgearbeitet werden.

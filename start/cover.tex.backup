@@ -1,0 +1,28 @@
+
+%\KOMAoptions{fontsize=9pt}
+\begin{titlepage}
+ 	\includegraphics[scale=0.5]{fotos/fhlogo_imst.png}\\
+	\begin{center}
+		\rmfamily\Large 
+		--- \arbeitart ---\\
+		\vspace{2\baselineskip}
+		\rmfamily\huge\textbf{\bachelorarbeittitelDE}\\
+		\vspace{1\baselineskip}
+		\rmfamily\huge\textbf{\bachelorarbeittitelENG}\\ 		
+		\vspace{3\baselineskip}
+		\rmfamily\Large 
+		\namedesauthors\\
+		\vspace{2\baselineskip}
+		\rmfamily\large
+		\today \\
+		\vspace{2\baselineskip}
+		\rmfamily\Large
+		Fachhochschule Kaiserslautern\\
+		Fachbereich Informatik und Mikrosystemtechnik\\
+		Studiengang Angewandte Informatik\\
+		\vspace{2\baselineskip}
+		Betreuer: Prof. Dr.  Michael  Bender (FH Kaiserslautern)\\
+		Zweitkorrektor: Prof. Dr. Uwe Tronnier (FH Kaiserslautern)\\
+	\end{center}
+\end{titlepage} 
+\cleardoublepage 

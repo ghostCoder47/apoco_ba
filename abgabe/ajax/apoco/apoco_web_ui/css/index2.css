@@ -1,0 +1,73 @@
+body {
+
+	margin: 0 auto;
+	min-width: 1200px;
+	height: 600px;
+	
+}
+
+#body {
+
+	background: #ddd;
+	min-width: 1200px;
+	height: 600px;
+	
+}
+
+	#body #header {
+			
+			
+		height: 80px;	
+		background: #666;
+	}
+		
+	#body #subheader {
+			
+			
+		height: 60px;
+		background: #777;
+	}
+		
+	#body #main {
+			
+		overflow: hidden;
+		height: 420px;
+		background: #aaa;
+	}
+	
+		#main #calender-holder {
+					
+			float:left;
+			width: 205px;
+			height: 224px;
+			overflow: hidden;
+			background: #fff;
+			display: inline-block;
+				
+		}
+				
+		#main #draw-holder {
+					
+			width: 780px;
+			height: 420px;
+			background: #eee;
+			display: inline-block;
+			
+		}
+				
+		#main #info-content-holder {
+							
+			width: 215px;
+			height: 420px;
+			background: #ccc;
+			display: inline-block;
+			
+		}
+	
+
+	#body #footer {
+		
+		height: 40px;
+		background: #555;
+		clear: both;
+	}

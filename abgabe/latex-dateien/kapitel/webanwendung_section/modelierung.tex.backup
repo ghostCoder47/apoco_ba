@@ -1,0 +1,25 @@
+
+
+\section{Modelierung} 
+
+Die Webanwendung f\"ur den Arzt, ist wie die Android-Applikation stark modularisiert.
+Sie ist ebenfalls alz \emph{MVC}- und \emph{Client-Server}-Architektur realisiert.
+F\"ur die Umsetzung werden folgende Mittel eingesetzt:
+
+\begin{itemize}
+ \item HTML:\\
+ Mit HTML wird die Struktur der Webanwendung aufgebaut.
+ 
+ \item CSS:\\
+ Mit CSS wird Die Seite gestaltet. CSS definiert hier die Positionierung und Farbgebung der einzelnen Elemente der Anwendung.
+ 
+ \item PHP:\\
+ PHP dient haupts\"achlich dem Zugriff auf die Datenbank \"uber eine REST-Schnittstelle.
+ 
+ \item JavaScript:\\
+ JavaScript setzt die Anwendungslogik auf dem Client um. Mit der Skriptsprache wird Die Webanwendung alz Ajax-Anwendung umgesetzt.
+\end{itemize}
+
+
+
+

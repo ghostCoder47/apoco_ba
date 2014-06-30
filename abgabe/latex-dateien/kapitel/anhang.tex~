@@ -1,0 +1,32 @@
+
+
+\chapter{Anhang}
+
+\section{Glossar}
+
+\begin{description}
+ \item [IEEE] Institute of Electrical and Electronics Engineers ist ein Berufsverband von Ingenieuren
+ f\"ur die Normierung von Techniken, Hardware und Software.
+ \item [SIG] Bluetooth Special Interest Group ist ein Zusammenschluss von mehreren Firmen, die an
+ Bluetooth zusammenarbeiten und weiterentwickeln.
+ \item [WLAN] drahtloses lokales Netzwerk, bei dem die Rechnerkommunikation \"uber Funk abgewickelt wird.
+ \item [UI] das User Interface ist die Schnittstelle zwischen Computer und Mensch.
+ \item [User Experience] das Anwendererlebnis beschreibt alle Aspekte der Erfahrungen eines
+ Anwenders bei der Interaktion mit einem Produkt.
+ \item [ISM-Band] Industrial, Scientific and Medical Band ist ein Frequenzbereich f\"ur Ger\"ate
+ die in der Industrie, Wissenschaft, Medizin und h\"auslichen und \"ahnlichen Bereichen genutzt werden k\"onnen. 
+ \item [Gateway] dient zur \"Ubermittlung von Nachrichten zwischen mehreren Netzen.
+ \item [FDA] Food and Drug Administration. Aufgabe der FDA ist der Schutz der \"offentlichen
+ Gesundheit in den USA. Sie kontrolliert unter anderem Medizinprodukte.
+ \end{description}
+
+\section{CD-Inhalt}
+\begin{itemize}
+ \item BA\_858168\_DawidJanas.pdf
+ \item Bachelorarbeit Latex-Dateien
+ \item Programmcode der Android-Anwendungim Verzeichnis: android
+ \item Programmcode der Webanwendung im Verzeichnis: ajax
+ \item SQL-Datenbankschema im Verzeichnis: \texttt{sql\_db}
+ \item APK-Datei der Android-Anwendung: im Verzeichnis apk
+ \item Sicherung der Online Quellenangaben als pdf
+\end{itemize}

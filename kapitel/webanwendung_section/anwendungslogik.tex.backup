@@ -1,0 +1,175 @@
+ 
+
+ 
+ \section{Anwendungslogik}
+
+Die Anwendungslogik ist auf mehrere Skripte aufgeteilt.
+Jedes ist verantwortlich f\"ur eine bestimmte Teilaufgabe.
+\begin{itemize}
+ \item ajaxmanager.js:\\
+ Der \emph{AjaxManager} stellt Zugriffsmethoden f\"ur die REST-Schnittstelle zur Verf\"ugung.
+ Beim Aufruf einer Methode werden Parameter und eine Referenz auf das Aufruferobjekt mitgegeben.
+ Der \emph{AjaxManager} w\"ahlt das richtige PHP-Skript aus und delegiert den Aufruf weiter an 
+ die \emph{AJAX}-Klasse.
+ Anschlie\ss{}end wird die Anfrage \"uber Ajax im Hintergrund des Browsers ausgef\"uhrt.
+ Das Listing x.x veranschaulicht diesen Vorgang durch einen Ausschnitt der Implementierung der \emph{AjaxManager}-Klasse.\\
+ 
+ \begin{lstlisting}[caption={Beispiel f\"ur \emph{AjaxManager}-Implementierung}]
+function AjaxManager() {
+   this.getUserList = function(callbackObject, keyValueList) {
+      var url = "/apoco/apoco_web_ui/db_url/user_list.php";
+      go(callbackObject, keyValueList, url);
+   };
+   
+   function go(callbackObject, keyValueList, url) {
+      var ajax = new AJAX();
+      var params = keyValueList.toParams();
+      ajax.sndReqGET(url, params, callbackObject);
+   }
+}
+\end{lstlisting}
+ 
+ \item xhrobject.js:\\
+ Hier befindet sich die \emph{AJAX}-Klasse.
+ Sie erzeugt ein XHR-Objekt, mit dem die Daten im Hintergrund des Webbrowsers an einen Webserver gesendet werden.
+ Das Senden kann mittels der beiden Methoden \emph{sndReqGET()} und \emph{sndReqPOST()} geschehen.
+ Die Aufrufe werden in der Webanwendung ausschlie\ss{}lich \"uber \emph{GET} get\"atigt.
+ Diese Vorgehensweise wird durch das Listing x.x veranschaulicht.\\
+ 
+ \begin{lstlisting}[caption={Beispiel f\"ur eine Methode zum Senden \"uber Ajax}]
+this.sndReqGET = function(url, params, cbo) {        
+   callbackObject = cbo;
+   if (null == xhrObj) {
+      alert("An Error occured when trying to initialize XMLHttpRequest!");
+   } else {
+      xhrObj.open("get", url + params, true);
+      xhrObj.onreadystatechange = handleResponse;
+      xhrObj.send(null);
+   }               
+};
+\end{lstlisting}
+
+Eine Antwort vom Server wird mit der Funktion \emph{handleResponse()} im Listing x.x behandelt.
+Die Implementierung verdeutlicht das Zusammenspiel der Anwendung.
+Wenn die Anfrage fertig ist und eine Antwort empfangen wird, ruft die \emph{handleResponse()}-Funktion 
+die \emph{update()}-Methode
+des \emph{callbackObject} auf und \"ubergibt ihm die Serverantwort als JSON-String.
+Hinter dem \emph{callbackObject} steckt hier die Klasse \emph{Drawer}, da diese sich um die 
+graphische Darstellung der Serverr\"uckmeldung k\"ummert.\\
+
+ \begin{lstlisting}[caption={handleResponse Funktion zum Abfangen von Serverantworten}]
+var handleResponse = function() {        
+        if (xhrObj.readyState==4 && xhrObj.status==200) {            
+            var json = JSON.parse(xhrObj.responseText);
+            if (json.success == 1) {                
+                if (null != callbackObject) {                                        
+                    callbackObject.update(json);               
+                }
+            }
+        }       
+    };
+\end{lstlisting}
+ 
+ 
+  
+ \item btn\texttt{\_}init.js:\\
+ Dieses Skript bindet an alle \emph{onclick}-Methoden von Buttons die entsprechenden Funktionen.
+ Hier wird auch reguliert welche Elemente wann sichtbar sein sollen und wie sie zusammen interagieren.
+ 
+ \item calendar.js:\\
+ In diesem Skript steckt die gesamte Anwendungslogik f\"ur den Kalender.
+ Au\ss{}erdem enth\"alt es einige Konstanten f\"ur einen Modifizierer mit der Bezeichnung 
+ \emph{calendarResolutionModif}.
+ Hier wird ein Zeitintervall hinterlegt.
+ Die Software kombiniert das Zeitintervall mit einem Zeitstempel und berechnet so den Zeitrahmen 
+ von wann bis wann die Daten aus der Datenbank gelesen werden sollen.
+ Zus\"atzlich orientiert sich der Algorithmus zum zeichnen des Graphen an diesem Modifizierer.
+ Er berechnet damit die Abst\"ande der angezeigten Daten auf der Zeitachse. 
+ Zur Auswahl stehen die Werte Tag, Woche und Monat zu verf\"ugung.
+ 
+ \item drawer.js:\\
+ Das Objekt \emph{Drawer} ist verantwortlich daf\"ur,
+ dass nach jeder Benutzer-Interaktion, Informationen als Graph oder Liste dargestellt werden.
+ Zus\"atzlich gibt es hier zwei Modifizierer f\"ur die Auswahl was gezeichnet werden soll.
+ Der Modifizierer \emph{viewValuesModif} gibt an was im Graphen gezeichnet wird.
+ Dabei werden die entsprechenden Werte \"uber Ajax aus der Datenbank geladen.
+ Zur auswahl gibt es die M\"oglichkeiten Blutdruck und Pulse, Kilokalorien und K\"orpergewicht, Alles, oder die Liste der Mahlzeiten.
+ Mit dem Modifizierer \emph{DRAW\texttt{\_}MODIF} wird festgelegt welche Webseiten-Elemente gezeigt werden sollen.
+ Daff\"ur gibt es die M\"oglchkeiten Patienten-\"Ubersicht, Graph, Mahlzeitenliste und Patienten-Preview.
+ 
+ \item graph\texttt{\_}drawer.js:\\
+ Dieses Skript beinhaltet Hilfsfunktionen zum Zeichnen.
+ Nach dem Daten aus der Datenbank gelesen sind, 
+ bekommt das Objekt \emph{GraphDrawer} diese \"ubergeben und stellt sie in einem Graph, oder Liste dar.
+ Der Graph wird mit JavaScript \"uber das Tag \emph{canvas} gezeichnet.
+ Dieses wird nur in ganz modernen Webbrowsern unterst\"utzt.
+ \subitem Internet Explorer ab 9.0
+ \subitem Mozilla Firefox ab 3.6
+ \subitem Google Chrome ab 14.0
+ 
+ \item key\texttt{\_value\_list}.js:\\
+ Die Klasse \emph{KeyValueList} ist eine Liste aus Wertepaaren.
+ Mit der Methode \emph{addKeyValue()} werden neue Wertepaare eingetragen und mit der Methode
+ \emph{toParams()} wird eine String-Kette aus den Wertepaaren ausgegeben.
+ Diese Stringkette dient als Parameter\"ubergabe an die \emph{HTTP-GET} Methode zum Aufruf einer Anfrage an die REST-Schnittstelle.
+ 
+ \item key\texttt{\_value\_pair}.js:\\
+ Hier ist die Klasse \emph{KeyValuePair} implementiert.
+ Objekte dieser Klasse werden in einer KeyValueList gespeichert.
+ Das Listing x.x gibt ein Beispiel f\"ur die Implementierung und Verwendung der Klassen KeyValueList und KeyValuePair.\\
+ 
+\begin{lstlisting}[caption={handleResponse Funktion zum Abfangen von Serverantworten}]
+//KeyValuePair
+function KeyValuePair(key, value) {    
+    this.key = key;
+    this.value = value; 
+}
+//KeyValueList
+function KeyValueList() {    
+    var keyValuePairs = new Array();
+    var elements = 0;   
+    this.addKeyValue = function(kv) {     
+        if (KeyValuePair.prototype.isPrototypeOf(kv)) {            
+            keyValuePairs[elements] = kv;
+            elements++;           
+        }
+    };   
+    this.toParams = function() {        
+        var params;
+        for (var index in keyValuePairs) {            
+            if (index > 0) {                
+                params +="&";
+            } else if (index == 0) {                
+                params = "?";
+            }
+            params += keyValuePairs[index].key + "=" + keyValuePairs[index].value;
+        }    
+        return params;
+    };    
+}
+
+var paramlist = new KeyValueList();
+paramlist.addKeyValue( new KeyValuePair("datum", "2013-09-06"));
+paramlist.addKeyValue( new KeyValuePair("name", "Dawid"));
+var ergebnis = paramlist.toParams();
+//ausgabe: ?datum=2013-09-06&name=Dawid
+\end{lstlisting}
+ 
+ Die Ausgabe aus dem Listing x.x kann so als Parameter zum absenden, an die HTML-GET-Methode geh\"angt werden.
+ 
+ \item page\texttt{\_}chooser.sj:\\
+ Die Webanwendung ist im grundegenommen aus zwei Webseiten konzipiert.
+ Beim Start befindet sich der Benutzer auf der Webseite \emph{Patientenliste}.
+ Wird ein Patient ausgew\"ahlt und klickt der Benutzer auf Deteils so befindet er sich auf der Webseite \emph{Deteilansicht}.
+ Mit Ajax verschmelzen beide Webseiten zu einer Fundament-Seite und es werden nur die Inhalte im Webdokument per Ajax ausgetauscht.
+ Die Klasse \emph{PageChooser} ist hier eine Art Zustandsautomat und bietet zum Umschalten zwischen den beiden Ansichten den Modifizierer \emph{PAGE\texttt{\_}MODIF} an.
+
+ \item apoco\texttt{\_web\_ui\_init}.js:\\
+ Dieses Skript wird beim Start der Websoftware alz letztes geladen.
+ Es wartet ab bis die vollst\"andige Webseite geladen ist und initialisiert die Anwendung.
+ Dabei wird das Ger\"ust f\"ur den Kalender aufgebaut.
+ Es bietet zudem Funktionen um nach einer Interaktion mit dem Benutzer den Kalender neu zu zeichnen.
+\end{itemize}
+
+
+

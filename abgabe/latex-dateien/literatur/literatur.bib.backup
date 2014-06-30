@@ -1,0 +1,242 @@
+@BOOK{Android:01,
+AUTHOR = "Mike, Back",
+TITLE = {{Mobile Anwendungen mit Android, Entwicklung und praktischer Einsatz}},
+PUBLISHER = "Addison-Wesley",
+YEAR = "2011"}
+
+@BOOK{Android:02,
+AUTHOR = "{Arno, Becker} and {Marcus, Pant}",
+TITLE = {{Android 2, Grundlagen und Programmierung}},
+PUBLISHER = "Addison-Wesley",
+YEAR = "2011"}
+
+@BOOK{Android:03,
+AUTHOR = {Thomas, K"unneth},
+TITLE = {{Android 4, Apps entwickeln mit dem Android SDK (Auflage 2)}},
+PUBLISHER = "Gallileo Press",
+YEAR = "2012"}
+
+@BOOK{Java:01,
+AUTHOR = "Rainer, Oechsle",
+TITLE = {{Parallele und Verteilte Anwendungen (Auflage 3)}},
+PUBLISHER = "Hanser",
+YEAR = "2011"}
+
+@BOOK{Java:02,
+AUTHOR = "Michael, Inden",
+TITLE = {{Der Weg zum Java-Profi (Auflage 2}},
+PUBLISHER = "dpunkt.verlag",
+YEAR = "2012"}
+
+@MISC{JavaScript:01,
+AUTHOR = "Christian, Wenz",
+TITLE        = "{JavaScript, Das umfassende Traning}",
+YEAR         = "2011",
+HOWPUBLISHED = "DVD"
+}
+
+@BOOK{PHP_MySQL:01,
+AUTHOR = "{Stefan, Reimers} and {Gunnar, Thies}",
+TITLE = {{PHP 5.4 \& MySQL 5.5 (Auflage 4)}},
+PUBLISHER = "Gallileo Press",
+YEAR = "2012"}
+
+@BOOK{Android:04,
+AUTHOR = "Wei-Meng, Lee",
+TITLE = {{Android Application Development Cookbook, 93 Recipes for Building Winning Apps}},
+PUBLISHER = "Jonh Wiley \& Sons",
+YEAR = "2013"}
+
+@BOOK{Android:05,
+AUTHOR = "{Shane, Conder} and {Lauren, Darcey}",
+TITLE = {{Android Wireless Application Development Volume II, Advanced Topics (Developer's Library) (Auflage 3)}},
+PUBLISHER = "Addison-Wesley",
+YEAR = "2012"}
+
+@MISC{Ajax:01,
+	TITLE        = "{Ajax -Eingf\"uhrung}",
+	YEAR         = "2006",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://webdesignblog.de/allgemein/ajax-einfuhrung/}; Besucht am 20. August 2013."
+}
+
+@BOOK{Ajax:02,
+AUTHOR = "Christian, Wenz",
+TITLE = {{JavaScript und AJAX, Das umfassende Handbuch (Auflage 7)}},
+PUBLISHER = "Gallileo Press",
+YEAR = "2007"}
+
+@MISC{Bluetooth:01,
+	TITLE        = "{Bluetooth}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://www.bluetooth.com/Pages/basics.aspx}; Besucht am 21. August 2013."
+}
+
+@MISC{Bluetooth:02,
+	TITLE        = "{Bluetooth Special Interest Group (SIG)}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{https://www.bluetooth.org/en-us}; Besucht am 21. August 2013."
+}
+
+@BOOK{Bluetooth:03,
+AUTHOR = "Albert S., Huang",
+TITLE = {{Bluetooth Essentials for Programmers }},
+PUBLISHER = "Cambridge University Press",
+YEAR = "2007"
+}
+
+@MISC{KERN_PCB,
+	TITLE        = "{KERN PCB 6000}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://www.kern-sohn.com/data/zusatzseiten/downloads/z-cb-de-kp-precision-balances.pdf}; Besucht am 22. August 2013."
+}
+
+@MISC{PicoPlug,
+	TITLE        = "{Pico Plug}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://www.bluetoothupgrades.de/pico_plug.htm}; Besucht am 22. August 2013."
+}
+
+@MISC{WeightTel,
+	TITLE        = "{WeightTel}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://www.bodytel.com/weighttel.html}; Besucht am 22. August 2013."
+}
+
+@MISC{PressureTel,
+	TITLE        = "{PressureTel}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://www.bodytel.com/pressuretel.html}; Besucht am 22. August 2013."
+}
+
+@MISC{med_93_42,
+	TITLE        = "{Medizinproduktrichtlinie}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikipedia.org/wiki/Richtlinie_93/42/EWG_%C3%BCber_Medizinprodukte}; Besucht am 22. August 2013."
+}
+
+@MISC{EAN:01,
+	TITLE        = "{Produkte überall finden}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://ean-suche.org/ean-code-suche/}; Besucht am 22. August 2013."
+}
+
+@MISC{EAN:02,
+	TITLE        = "{European Article Number}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikipedia.org/wiki/European_Article_Number#EAN-Strichcode_zur_Codierung_der_GTIN_.28ehem._EAN-13.29}; Besucht am 22. August 2013."
+}
+
+@MISC{REST:01,
+	TITLE        = "{Representational State Transfer}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikipedia.org/wiki/Representational_State_Transfer}; Besucht am 23. August 2013."
+}
+
+@MISC{CSS:01,
+	TITLE        = "{Cascading Style Sheets}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikipedia.org/wiki/Cascading_Style_Sheets}; Besucht am 23. August 2013."
+}
+
+@MISC{HTML:01,
+	TITLE        = "{Hypertext Markup Language}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikipedia.org/wiki/Hypertext_Markup_Language}; Besucht am 23. August 2013."
+}
+
+@MISC{RWD:01,
+	TITLE        = "{Responsive Webdesign}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikipedia.org/wiki/Responsive_Webdesign}; Besucht am 23. August 2013."
+}
+
+@MISC{XML:01,
+	TITLE        = "{Extensible Markup Language}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikipedia.org/wiki/Extensible_Markup_Language}; Besucht am 25. August 2013."
+}
+
+@MISC{XML:02,
+	TITLE        = "{Websiteentwicklung: XML: Aufbau eines XML-Dokumentes}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikibooks.org/wiki/Websiteentwicklung:_XML:_Aufbau_eines_XML-Dokumentes}; Besucht am 26. August 2013."
+}
+
+@MISC{JSON:01,
+	TITLE        = "{JavaScript Object Notation}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikipedia.org/wiki/JavaScript_Object_Notation}; Besucht am 26. August 2013."
+}
+
+@BOOK{Sicherheit:01,
+AUTHOR = {J"org, Schwenk},
+TITLE = {{Sicherheit und Kryptographie im Internet (Auflage 3)}},
+PUBLISHER = "Vieweg + Teubner Verlag",
+YEAR = "2010"
+}
+
+@MISC{Sicherheit:02,
+	TITLE        = "{Message-Digest Algorithm 5}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikipedia.org/wiki/Message-Digest_Algorithm_5}; Besucht am 29. August 2013."
+}
+
+@MISC{Sicherheit:03,
+	TITLE        = "{Transport Layer Security}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikipedia.org/wiki/Transport_Layer_Security}; Besucht am 29. August 2013."
+}
+
+@BOOK{Sicherheit:04,
+AUTHOR = "{James F., Kurose} and {Keith W., Ross}",
+TITLE = {{Computernetzwerke Der Top-Down-Ansatz (Auflage 4)}},
+PUBLISHER = "Addison-Wesley",
+YEAR = "2008"
+}
+
+@MISC{Sicherheit:05,
+	TITLE        = "{Advanced Encryption Standard}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikipedia.org/wiki/Advanced_Encryption_Standard}; Besucht am 29. August 2013."
+}
+
+@MISC{Sicherheit:06,
+	TITLE        = "{The Legion of the Bouncy Castle}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://www.bouncycastle.org/}; Besucht am 31. August 2013."
+}
+
+@MISC{ETSI:01,
+	TITLE        = "{ETSI}",
+	YEAR         = "2012",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://www.etsi.org/}; Besucht am 03. September 2013."
+}
+
+@MISC{AT-command:01,
+	TITLE        = "{AT-Befehlssatz}",
+	YEAR         = "2013",
+	HOWPUBLISHED = "Website",
+	NOTE         = "\url{http://de.wikipedia.org/wiki/AT-Befehlssatz}; Besucht am 04. September 2013."
+}

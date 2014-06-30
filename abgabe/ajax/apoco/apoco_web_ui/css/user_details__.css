@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+body {
+
+	margin: 0 auto;
+	width: 1200px;
+	height: 600px;
+	
+	font-size: 1em;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+	
+	border:0;
+	padding:0;
+	margin:0;
+}
+
+#body {
+	
+	
+	background: #ddd;
+	width: 1200px;
+	height: 600px;
+	
+}
+
+	#header {
+						
+		height: 80px;	
+		background: #666;
+	}
+	
+	#page_description {
+				
+		padding-left:20px;
+		text-align: center;
+		font-size:1.5em;
+		font-weight: bold;
+	}
+	#logo {
+		
+		width:100px;
+		height:80px;
+		text-align: center;
+		margin-left:7px;
+	}
+		
+	#head-navigation {
+		
+		padding-top:6px;	
+		height: 34px;
+		background: #777;
+		vertical-align: middle;		
+				
+	}
+		
+		#head-navigation td {
+			
+			text-align:center;			
+		}
+		
+		#btn_tag {
+			
+			margin-left: 20px;
+		}
+		
+		#currentDate {
+			
+			width: 320px;
+			font-weight: bold;
+			font-size: 1em;
+			color:white;
+			vertical-align: middle;
+			
+		}
+		
+		#kalender-title {
+			
+			width: 180px;
+		}
+		
+			#kalender-title h2 {
+				
+				font-weight: bold;
+				font-size; 2em;
+				margin: 0;
+				padding 0;
+			}
+		
+		
+		
+	#main {
+			
+		overflow: hidden;
+		height: 440px;
+		background: #aaa;
+	}
+		
+		
+		#draw-holder {
+				
+			float:left;
+			width: 805px;
+			height: 440px;
+			background: #eee;
+			
+		}
+		
+		#info-content-holder {
+				
+			float:left;
+			width: 395px;
+			height: 440px;
+			background: #ccc;
+			
+		}
+		
+		
+			#calender-holder {
+						
+				float:left;
+				width: 180px;
+				height: 168px;
+				background: #fff;			
+					
+			}
+			
+			#patient_info {
+				clear:both;
+			}
+			
+			#btn_detailansicht {
+				
+				display:none;
+			}
+								
+				
+		
+	
+
+	#footer {
+		
+		height: 40px;
+		background: #555;
+		clear: both;
+	}
+
+		#btn_rr-hf {
+			
+			margin-left:205px;
+		}
+		

@@ -1,0 +1,84 @@
+
+
+\section{Kalendervisualisierung}
+
+Zum Darstellen des Kalenders auf der Webseite wird das DOM-Konzept benutzt.
+Im Skript \emph{\texttt{apoco\_web\_ui\_inits.js}} befindet sich die Funktion \emph{redrawCalendarWidget()}.
+Mit jeder Interaktion des Benutzers mit dem Kalender wird der Kalender mit dieser Funktion neu gezeichnet.
+Es wird nun erl\"autert wie dieses Prinzip funktioniert.\\
+Mit der Methode \emph{buildCalenderTable()} wird beim Start der Anwendung 
+eine HTML-Tabelle in das Webdokument gezeichnet.
+Das geschieht dynamisch beim Aufruf der Webseite.
+Dabei wird nur die Struktur des Kalenders vorgegeben.
+Zuerst wird der Kalenderkopf mit den Bedienungselementen, der Datumanzeige und die Zellen 
+mit der Beschriftung der Wochentage erstellt.
+Darauf folgen die einzelnen Zellen f\"ur die Tage im Monat, diese werden aber leer belassen. 
+Jede Zelle der Tabelle, auf die sp\"ater zugegriffen werden soll, bekommt eine \emph{id} zugewiesen.
+Im Listing 5.5 wird demonstriert, wie die Zellen erzeugt werden.
+
+ \begin{lstlisting}[caption={Erzeugen von Zellen im Kalender per DOM}]
+for(var row = 0; row < 6; row++) {
+//hier wird eine Zeile erzeugt
+   var calRow = document.createElement("tr");
+   var calRow_class = document.createAttribute("class");
+   var calRow_id = document.createAttribute("id");
+   calRow_class.nodeValue = "calendar-row";
+   calRow_id.nodeValue = "calRow_" + row;
+   calRow.setAttributeNode(calRow_class);
+   calRow.setAttributeNode(calRow_id);
+//hier werden Zellen fuer die aktuelle Zeile erzeugt         
+   for (var col = 0; col < 7; col++) {
+      var calDay = document.createElement("td");
+      var calDay_class = document.createAttribute("class");  
+      calDay.setAttributeNode(calDay_class);
+      calRow.appendChild(calDay);
+   }
+//eine fertige Zeile wird an die Tabelle angehaengt
+   tbody.appendChild(calRow);  
+}    
+\end{lstlisting}
+
+Die Klasse \emph{Calendar} kalkuliert alle notwendigen Zelleninformationen.
+In einem CSS-Dokument befinden sich Klassen, 
+die das Erscheinungsbild des Kalenders in Form und Farbe beeinflussen.
+Welche CSS-Klassen einer Zelle zugeordnet werden, wird aus der \emph{drawMatrix} 
+im \emph{Calendar}-Objekt gelesen.
+Diesen Arbeitsschritt \"ubernimmt die Funktion \emph{redrawCalendarWidget()} 
+im \emph{\texttt{apoco\_web\_ui\_inits.js}} Skript.
+Das Listing 5.6 demonstriert den Ablauf dieser Funktion in Kurzform.
+
+\begin{lstlisting}[caption={Ablauf der redrawCalendarWidget-Funktion}]
+for(var row = 0; row < 6; row++) {            
+   var calRow = document.getElementById("calRow_" + row);
+   //loesche Eintraege in dieser Zeile
+   calRow.innerHTML = "";
+   //erzeuge die Zeile mit neuen Eintraegen
+   for (var col = 0; col < 7; col++) {                
+      var calDay = document.createElement("td");
+      var calDay_class = document.createAttribute("class");         
+      //stelle fest, ob die Zelle zum aktuellen Monat gehoert.    
+      if (calendar.drawMatrix[row][col][CMZ.ONMONTH]) {                    
+         calDay_class.nodeValue = "calendar-day-onmonth";
+      } else {                    
+         calDay_class.nodeValue = "calendar-day-offmonth";
+      }
+         //Feststellung, ob die Zelle markiert wird                
+      if (calendar.drawMatrix[row][col][CMZ.MARKED]) {                                    
+         calDay_class.nodeValue = calDay_class.nodeValue + " " + "calendar-day-marked";
+      }
+      //repraesentiert die Zelle den aktuellen Tag?               
+      if (calendar.drawMatrix[row][col][CMZ.CURRENT_DAY]) {                   
+         calDay_class.nodeValue = calDay_class.nodeValue + " " + "calendar-day-today";
+      }  
+      calDay.setAttributeNode(calDay_class);
+      //Tag als Zahl in die Zelle eintragen
+      calDay.innerHTML =  "<span>" + calendar.drawMatrix[row][col][CMZ.DAY_NUMBER] + "</span>";                            
+      calDay.datum        = new Date(calendar.drawMatrix[row][col][CMZ.DATUM]);  
+      calDay.calendar = calendar;                            
+      ...                        
+      calRow.appendChild(calDay);
+      ...
+   }
+}
+  
+\end{lstlisting}

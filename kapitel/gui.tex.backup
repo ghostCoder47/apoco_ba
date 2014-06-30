@@ -1,0 +1,10 @@
+
+
+\chapter{GUI Konzept} 
+
+In diesem Kapitel wird die Gestaltung der graphischen Benutzeroberfl\"ache beschrieben.
+Im ersten Teil geht es um die Gestaltung der GUI der Android-Anwendung und im zweiten Teil wird auf die GUI der Webanwendung eingegangen.
+
+\input{kapitel/gui_section/apoco_gui_gestaltung}
+
+\input{kapitel/gui_section/webserver_gui_gestaltung}

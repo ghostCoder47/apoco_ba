@@ -1,0 +1,101 @@
+
+#btn_prev-month {
+	
+	padding: 2px;
+}
+
+#btn_next-month {
+	
+	padding: 2px;
+}
+
+#month_date {
+	
+}
+
+.calendar-table {
+	
+	color: black;
+	width: 180px;
+	height: 168px;
+	table-layout: fixed;
+}
+
+.calendar-header {
+	
+	background: aqua;
+}
+
+.calendar-header-day {
+		
+	color: black;
+	font-size: 0.6em;
+	text-align: center;
+	
+}
+
+.calendar-day-onmonth {
+	
+	
+	color: black;
+	background: white;
+	text-align: center;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.calendar-day-offmonth {
+	
+	
+	color: gray;	
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.calendar-day-marked {
+		
+	background: #99CCFF;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.calendar-day-today {
+	
+	/*color: black;
+	background: silver;
+	font-size: 0.8em;
+	font-weight: bold;*/
+	
+	border-color: red;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.calendar-day-offmonth:hover {
+	
+	color: black;
+	background: silver;
+}
+
+.calendar-day-onmonth:hover {
+	
+	background: silver;
+}
+
+.calendar-row {
+	
+	cursor: pointer;
+}
+
+.calender-button {
+	
+	margin:0;
+	
+}
+
+
+
+
+
+
+

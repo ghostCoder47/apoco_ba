@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+
+body {
+
+	margin: 0 auto;
+	width: 1200px;
+	height: 600px;
+	
+	font-size: 1em;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+	
+	border:0;
+	padding:0;
+	margin:0;
+}
+
+#body {
+	
+	
+	background: #ddd;
+	width: 1200px;
+	height: 600px;
+	
+}
+
+	#header {
+						
+		height: 80px;	
+		background: #0378A6;
+	}
+	
+	#page_description {
+				
+		padding-left:20px;
+		text-align: center;
+		font-size:1.2em;
+		font-weight: bold;
+		color: white;
+	}
+	#logo {
+		
+		width:100px;
+		height:80px;
+		text-align: center;
+		padding-left:830px;
+	}
+	
+	img {
+		
+		margin-top: 10px;
+		width:100px;
+	}
+		
+	#head-navigation {
+		
+		padding-top:6px;	
+		height: 34px;
+		background: #049DBF;
+		vertical-align: middle;		
+				
+	}
+	
+		#head-navigation-buttons {
+			
+			/*test*/
+			/*display:none;*/
+		}
+		
+		#head-navigation td {
+			
+			text-align:center;			
+		}
+		
+		
+		#btn_tag {
+			
+			margin-left: 20px;
+		}
+		
+		#currentDate {
+			
+			width: 320px;
+			font-weight: bold;
+			font-size: 1em;
+			color:white;
+			vertical-align: middle;
+			
+		}
+		
+		#kalender-title {
+			
+			width: 180px;
+		}
+		
+			#kalender-title h2 {
+				
+				font-weight: bold;
+				font-size; 2em;
+				margin: 0;
+				padding 0;
+			}
+		
+		
+		
+	#main {
+			
+		overflow: hidden;
+		height: 440px;
+		background: #aaa;
+	}
+	
+		#calender-holder {
+			
+			/*test*/
+			/*display:none;			*/
+			
+			float:left;
+			margin-left: 5px;
+			width: 180px;
+			height: 168px;
+			overflow: hidden;
+			background: #FFF;
+			/*display:none;*/
+		}
+		
+		
+						
+		#draw-holder {
+				
+			float:left;
+			width: 805px;
+			height: 440px;
+			overflow: hidden;
+			background: #FFF;
+			
+		}
+				
+		#info-content-holder {
+				
+			float:left;
+			width: 395px;
+			height: 440px;
+			overflow: hidden;
+			background: #04C4D9; 
+			
+		}
+		
+			#calender-holder {
+						
+				float:left;
+				width: 180px;
+				height: 168px;
+				background: #fff;			
+					
+			}
+			
+			#patient_info {
+				clear:both;
+				margin-left: 5px;
+			}
+		
+			/*#btn_detailansicht {
+				
+				
+				display:none;
+			}*/
+	
+
+	#footer {
+		
+		height: 40px;
+		background: #049DBF;
+		clear: both;
+	}
+	
+		#footer_buttons {
+			
+			/*display:none;*/
+		}
+
+		#btn_rr-hf {
+			
+			margin-left:205px;
+		}
+		

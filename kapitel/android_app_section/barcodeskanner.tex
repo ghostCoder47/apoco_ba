@@ -1,0 +1,76 @@
+
+
+\section{Barcodescanner} 
+
+F\"ur die Berechnung der zugef\"uhrten Kilokalorien m\"ussen die Eigenschaften eines Lebensmittels erkannt werden.
+Die Basis daf\"ur bildet der EAN-Code, der auf allen Nahrungsmitteln vorhanden ist.
+Nachdem der EAN-Code gescannt wurde, ist der Software die EAN-Nummer bekannt.
+Mit dieser Nummer wird in einer Datenbank nach einer \"Ubereinstimmung gesucht.
+F\"ur die Projektumsetzung greift die ApoCo-Anwendung auf eine bereits existierende Datenbank aus dem Projekt 
+\emph{ClearFood}.
+ClearFood bietet alle notwendigen Informationen \"uber verschiedene Lebensmittel an.
+Aus den Angaben \"uber Energiemenge pro 100g und dem gewogenen Gewicht wird die Energiemenge, 
+die der Patient einnehmen m\"ochte, berechnet.\\
+Zum Scannen des EAN-Codes wird die ZXing\cite{EAN:03}-Bibliothek genutzt.
+ZXing wird \emph{zebra crossing} ausgesprochen. 
+Es handelt sich dabei um eine Bibliothek f\"ur 1D und 2D Barcode-Bildverarbeitung.
+Diese Bibliothek ist in Java implementiert und bietet eine Client-Anwendung f\"ur Android an.
+Der ZXing-Client ist in ApoCo integriert.
+Nach dem Start kann mit der Kamera auf der R\"uckseite des Smartphones ein Barcode erfasst werden.
+Der ZXing-Client analysiert das Bild und gibt, nachdem ein Barcode erkannt wurde, 
+diesen als EAN-Nummer an die ApoCo-Anwendung zur\"uck.
+F\"ur diesen Zweck dienen die zwei Klassen \emph{IntentIntegrator} und \emph{IntentResult} im Paket \emph{zxing} 
+der ApoCo-Anwendung.
+Zudem muss das Manifest der Android-Anwendung modifiziert werden. 
+Im Listing 4.14 wird die Integration der \emph{CaptureActivity}
+aus der ZXing Bibliothek demonstriert.\\
+
+\begin{lstlisting}[caption={ApoCo-Manifest, Integration von ZXing}]
+//ApoCo_Manifest
+...
+ <activity 
+            android:name="com.google.zxing.client.android.CaptureActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">            
+ </activity> 
+\end{lstlisting}
+
+\"Uber die Klasse \emph{ActivityMealenergy} wird der Barcodescanner verwendet.
+Zum Starten dient hier die Klasse \emph{IntentIntegrator}.
+Die Implementierung demonstriert das Listing 4.15.
+Hier wird ein \emph{Integrator}-Objekt im \emph{OnClickListener} eines Buttons erzeugt.
+Anschlie\ss{}end wird der Scan mit der Methode \emph{initiateScan()} gestartet.\\
+
+\begin{lstlisting}[caption={Barcodesuche starten}]
+barcodeScannerBTN.setOnClickListener(new OnClickListener() {
+   IntentIntegrator ii = new IntentIntegrator(ActivityMealenergy.this);
+   ii.initiateScan();
+});
+\end{lstlisting}
+
+Der \emph{IntentIntegrator} bekommt im Konstruktor eine Referenz auf ein Objekt der 
+Klasse \emph{ActivityMealenergy} \"ubergeben.
+Nach der Initialisierung des Vorgangs bereitet er ein Intent zum eigentlichen Scan vor.
+Anschlie\ss{}end wird das Intent als Parameter an die Methode \emph{startActivityForResult()} \"ubergeben,
+welche \"uber die Referenz zur \emph{ActivityMealenergy} aufgerufen wird.
+Ist der EAN-Code eingelesen, wird er an die Activity \emph{ActivityMealenergy} zur\"uckgegeben.
+Das muss mit der Methode \emph{onActivityResult()} abgefangen werden.
+Im Listing 4.16 wird das Abfangen demonstriert.\\
+
+\begin{lstlisting}[caption={Ergebnis der Suche abfangen}]
+protected void onActivityResult(int request, int result, Intent data) {
+  super.onActivityResult(request, result, data);  
+     switch(request) {
+        case IntentIntegrator.REQUEST_CODE:
+           if (RESULT_OK == result) {     
+              //Ergebnis handhaben
+              IntentResult r = IntentIntegrator.parseActivityResult(request, result, data);              
+              String barcode = r.getContents();              
+              Context activity = ActivityMealenergy.this;
+              //GetFood ist ein AsyncTask zum Zugriff auf die Datenbank
+              new GetFood(activity, new NetworkHandler(activity, true), mHandlerAct).execute(barcode);
+           }
+        break;
+    }
+}
+\end{lstlisting}

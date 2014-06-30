@@ -1,0 +1,116 @@
+
+
+%koma script config
+\KOMAoptions{cleardoublepage=empty}
+
+\KOMAoptions{%	
+	toc=indented,
+	toc=bib,
+	bibliography=totoc, % add Bibliography to TOC without number
+	bibliography=openstyle,
+	toc=listof,
+	listof=totoc, % add Lists to TOC without number
+	listof=left, % tabular styles
+	listof=indented, % hierarchical style
+	listof=chaptergapsmall % New chapter starts are marked by a gap of a smallsingle line
+	%numbers=noenddot %dot behind section numbers (enddot, noenddot, autoenddot)
+}
+
+
+
+
+
+%
+
+% Abstaende zwischen Caption und Bild/Tabelle
+
+%
+
+\setlength\abovecaptionskip{0.4em}
+
+\setlength\belowcaptionskip{0.2em}
+
+\raggedbottom
+
+\setlength{\parskip}{2.0ex}
+
+\setlength{\parindent}{0.0cm}
+
+\parindent 0pt
+
+\setcounter{tocdepth}{2}
+
+% kopf fuss - zeile
+\pagestyle{fancy}
+
+\rhead[\leftmark]{\thepage}
+\lhead[\thepage]{\rightmark}
+\chead{}
+\rfoot[]{\thepage}
+\lfoot[\thepage]{}
+\cfoot{}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+%author angaben
+\newcommand{\bachelorarbeittitelDE}{Entwurf und Implementierung einer Anwendung f\"ur ambulante Betreuung bei Adipositas}
+\newcommand{\bachelorarbeittitelENG}{Design and Implementation of an Ambulant Care Application of Obesity}
+\newcommand{\namedesauthors}{Dawid Janas}
+\newcommand{\geburtsdatum}{22.08.1978}
+\newcommand{\geburtsort}{Luban / Polen}
+\newcommand{\arbeitart}{Bachelorarbeit}
+
+%hyperref optionen
+\hypersetup{
+	pdftitle={Bachelorarbeit - \namedesauthors},
+	pdfauthor={\namedesauthors}
+}
+
+%path
+%\graphicspath{{screenshots/}{diagramme/}{fotos/}}
+
+
+%
+% define colors
+%
+\definecolor{codecolor}{rgb}{0.85,0.85,0.85}
+\definecolor{commentcolor}{rgb}{0.0,0.6,0.0}
+
+%
+% listings package options
+%
+\lstset{ %
+	language=[Visual]C++,			% choose the language of the code
+	basicstyle=\scriptsize,		% the size of the fonts that are used for the code
+	numbers=left,					% where to put the line-numbers
+	numberstyle=\scriptsize,		% the size of the fonts that are used for the line-numbers
+	stepnumber=1,					% the step between two line-numbers. If it's 1 each line will be numbered
+	numbersep=5pt,					% how far the line-numbers are from the code
+	backgroundcolor=\color{white},	% choose the background color. You must add \usepackage{color}
+	showspaces=false,				% show spaces adding particular underscores
+	showstringspaces=false,			% underline spaces within strings
+	showtabs=false,					% show tabs within strings adding particular underscores
+	frame=single,					% adds a frame around the code
+	tabsize=2,						% sets default tabsize to 2 spaces
+	captionpos=b,					% sets the caption-position to bottom
+	breaklines=true,				% sets automatic line breaking
+	breakatwhitespace=false,		% sets if automatic breaks should only happen at whitespace
+	escapeinside={\%*}{*)},         % if you want to add a comment within your code
+	morekeywords={SLOT,SIGNAL,var,function}            % if you want to add more keywords to the set
+	keywordstyle=\color{blue},
+	commentstyle=\color{commentcolor},
+	stringstyle=\color{red},
+	morecomment=[s][\color{blue}]{\#}{\ }
+}
+
+%
+%   Hintergrundfarbe von Quellcode
+%
+\lstloadlanguages{[Visual]C++, Java, PHP}
+\lstset{basicstyle = \ttfamily \scriptsize}
+\lstset{backgroundcolor=\color{codecolor}}
+\lstset{extendedchars=true} \lstset{showstringspaces = false}
+\lstset{morekeywords={SLOT,SIGNAL,slot,signal,:,signals,slots,var,function}}
+
+ 

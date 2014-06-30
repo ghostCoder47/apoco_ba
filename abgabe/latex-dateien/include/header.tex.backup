@@ -1,0 +1,51 @@
+
+
+%koma script config
+\KOMAoptions{cleardoublepage=empty}
+
+\KOMAoptions{%	
+	toc=indented,
+	toc=bib,
+	bibliography=totoc, % add Bibliography to TOC without number
+	bibliography=openstyle,
+	toc=listof,
+	listof=totoc, % add Lists to TOC without number
+	listof=left, % tabular styles
+	listof=indented, % hierarchical style
+	listof=chaptergapsmall % New chapter starts are marked by a gap of a smallsingle line
+}
+
+
+\setcounter{tocdepth}{2}
+
+% kopf fuss - zeile
+\pagestyle{fancy}
+
+\rhead[\leftmark]{\thepage}
+\lhead[\thepage]{\rightmark}
+\chead{}
+\rfoot[]{\thepage}
+\lfoot[\thepage]{}
+\cfoot{}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+%author angaben
+\newcommand{\bachelorarbeittitelDE}{Entwurf und Implementierung einer eHealth Anwendung zur ambulanten Adipositas-F\"uhrung durch einen Arzt}
+\newcommand{\bachelorarbeittitelENG}{Design and Implementation of an eHealth Application to outpationt care of obesity by a doctor}
+\newcommand{\namedesauthors}{Dawid Janas}
+\newcommand{\geburtsdatum}{22.08.1978}
+\newcommand{\geburtsort}{Luban / Polen}
+\newcommand{\arbeitart}{Bacherlorarbeit}
+
+%hyperref optionen
+\hypersetup{
+	pdftitle={Bachelorarbeit - \namedesauthors},
+	pdfauthor={\namedesauthors}
+}
+
+%path
+\graphicspath{{screenshots/}{diagramme/}{fotos/}}
+
+ 

@@ -1,0 +1,26 @@
+
+
+\section{Fundament der Anwendung}
+
+Das Fundament f\"ur die Grafischeoberfl\"ache der Software befindet sich im Webdokument \emph{index.html}.
+Es gibt die Struktur der Webanwendung vor.
+Zus\"atzlich werden hier auch alle nottwendigen Skripte und Stylesheets,
+im \emph{header} und \emph{body} der \emph{index.html}- Datei eingebunden.
+Neben der Struktur befinden sich bereit  einige Buttons f\"ur die Navigation.
+Die haupt Inhalte der Websoftware werden erst zu Laufzeit, dynamisch mit JavaScript \"uber das DOM-Konzept erzeugt und in das Dokument eingebunden.
+Die Abbildung 5.1 veranschaulicht mit einem Wireframe das Layout der Anwendung.\\
+
+\begin{figure}[h]
+\centering
+  \includegraphics[scale=0.4]{screenshots/kapitel5/wireframe.png}
+  \caption{Wireframe f\"ur Struktur der Webanwendung}
+\end{figure}
+
+Im \emph{header} Bereich befindet sich der Titel der Anwendung (\emph{Adipositas-Controlling}) und ein Logo.
+Der Bereich \emph{head-navigation} beinhaltet Schaltfl\"achen zur Steuerung der Software.
+Diese werden abh\"angig davon was im augenblick mit der Software getan wird, ein oder ausgeblendet.
+Im \emph{main} Bereich befinden sich die Container \emph{draw-holder} und \emph{info-content-holder}.
+In beiden werden Informationen \"uber Patienten dargestellt.
+Der letzte Abschnitt, \emph{footer} genannt, stellt je nach Aufgabe, weitere Schaltfl\"achen bereit.
+\"Uber die genannten Bezeichner \emph{head, head-navigation, main, draw-holder, info-content-holder} und \emph{footer}
+werden die Bereiche \"uber das DOM-Konzept angesprochen und manipuliert. 

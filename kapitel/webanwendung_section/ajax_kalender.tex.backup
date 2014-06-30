@@ -1,0 +1,79 @@
+
+
+\section{Kalendervisualisierung}
+
+Zum darstellen des Kalenders auf der Webseite wird das DOM-Konzept benutzt.
+Im Skript \emph{\texttt{apoco\_web\_ui\_inits.js}} befindet sich die Funktion \emph{redrawCalendarWidget()}.
+Mit jeder Interaktion des Benutzers mit dem Kalender wird der Kalender mit dieser Funktion neugezeichnet.
+Es wird nun erl\"autert wie dieses Prinzip funktioniert.\\
+Mit der Methode \emph{buildCalenderTable()} wird eine HTML-Tabelle in das Webdokument gezeichnet.
+Das geschieht dynamisch beim Aufruf der Webseite.
+Dabei wird nur die Struktur des Kalenders vorgegeben.
+Zu erst wird der Kalender-Kopf mit den Bedienelementen, der Datumanzeige und die Zellen mit der Beschriftung der Wochentage erstellt.
+Darauf folgen die einzelnen Zellen f\"ur die Tage im Monat, werden aber leer belassen. 
+Jede Zelle der Tabelle, auf die sp\"ater zugegriffen werden soll bekommt eine \emph{id} zugewiesen.
+Im Listing x.x wird demonstriert wie die Zellen erzeugt werden.
+
+ \begin{lstlisting}[caption={Erzeugen von Zellen im Kalender per DOM}]
+for(var row = 0; row < 6; row++) {
+//hier wird eine Zeile erzeugt
+   var calRow = document.createElement("tr");
+   var calRow_class = document.createAttribute("class");
+   var calRow_id = document.createAttribute("id");
+   calRow_class.nodeValue = "calendar-row";
+   calRow_id.nodeValue = "calRow_" + row;
+   calRow.setAttributeNode(calRow_class);
+   calRow.setAttributeNode(calRow_id);
+//hier werden Zellen f\"ur die aktuelle Zeile erzeugt         
+   for (var col = 0; col < 7; col++) {
+      var calDay = document.createElement("td");
+      var calDay_class = document.createAttribute("class");  
+      calDay.setAttributeNode(calDay_class);
+      calRow.appendChild(calDay);
+   }
+//eine fertige Zeile wird an die Tabelle angeh\"angt
+   tbody.appendChild(calRow);  
+}    
+\end{lstlisting}
+
+Die Klasse \emph{Calendar} kalkuliert alle notwendigen Zelleninformationen.
+Wie der Kalender aussehen soll, also die Form und Farben werden mittels Klassen im CSS vorgegeben.
+Welche CSS-Klassen einer Zelle zugeordnet werden, wird aus der \emph{drawMatrix} im Calendar-Objekt gelesen.
+Diesen Arbeitsschritt \"ubernimmt die Funktion \emph{redrawCalendarWidget()} im \emph{\texttt{apoco\_web\_ui\_inits.js}} Skript.
+Das Listing x.x demonstriert den Ablauf dieser Funktion in Kurzform.
+
+\begin{lstlisting}[caption={Ablauf der redrawCalendarWidget-Funktion}]
+for(var row = 0; row < 6; row++) {            
+   var calRow = document.getElementById("calRow_" + row);
+   //l\"osche Eintr\"age in dieser Zeile
+   calRow.innerHTML = "";
+   //erzeuge die Zeile mit neuen Eintr\"agen
+   for (var col = 0; col < 7; col++) {                
+      var calDay = document.createElement("td");
+      var calDay_class = document.createAttribute("class");         
+      //geh\"ohrt die Zelle zum aktuellen Monat    
+      if (calendar.drawMatrix[row][col][CMZ.ONMONTH]) {                    
+         calDay_class.nodeValue = "calendar-day-onmonth";
+      } else {                    
+         calDay_class.nodeValue = "calendar-day-offmonth";
+      }
+         //wird die Zelle makiert                
+      if (calendar.drawMatrix[row][col][CMZ.MARKED]) {                                    
+         calDay_class.nodeValue = calDay_class.nodeValue + " " + "calendar-day-marked";
+      }
+      //representiert die zelle den aktuellen Tag               
+      if (calendar.drawMatrix[row][col][CMZ.CURRENT_DAY]) {                   
+         calDay_class.nodeValue = calDay_class.nodeValue + " " + "calendar-day-today";
+      }  
+      calDay.setAttributeNode(calDay_class);
+      //Tag als Zahl in die Zelle eintragen
+      calDay.innerHTML =  "<span>" + calendar.drawMatrix[row][col][CMZ.DAY_NUMBER] + "</span>";                            
+      calDay.datum        = new Date(calendar.drawMatrix[row][col][CMZ.DATUM]);  
+      calDay.calendar = calendar;                            
+      ...                        
+      calRow.appendChild(calDay);
+      ...
+   }
+}
+  
+\end{lstlisting}

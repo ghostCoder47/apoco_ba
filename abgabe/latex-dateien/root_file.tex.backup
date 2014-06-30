@@ -1,0 +1,42 @@
+\documentclass[pdftex, a4paper, 11pt, twoside, openright, DIV12, BCOR8mm]{scrbook}
+
+\input{include/package}
+\include{include/header}
+\input{include/hyphenation}
+
+\begin{document}
+
+\input{start/cover}
+
+\pagenumbering{roman}
+\include{start/kurzfassung}
+\include{start/ehrenwoertliche_erklaerung}
+\include{start/sperrvermerk}
+
+%leere seite nach sperrvermerk
+
+\thispagestyle{empty}
+\cleardoublepage
+
+\pagenumbering{arabic}
+\pdfbookmark[0]{Inhaltsverzeichnis}{toc}	%inhaltsverzeichnis im pdf
+\tableofcontents
+
+\include{kapitel/einleitung}
+\include{kapitel/grundlagen}
+\include{kapitel/sicherheit}
+\include{kapitel/konzept}
+\include{kapitel/gui}
+\include{kapitel/implementierung}
+
+\include{kapitel/zusammenfassung}
+
+
+\bibliography{literatur/literatur}{}
+\bibliographystyle{amsalpha}
+\listoffigures
+\lstlistoflistings
+\appendix
+\include{kapitel/anhang}
+
+\end{document}

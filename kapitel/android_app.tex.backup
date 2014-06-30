@@ -1,0 +1,28 @@
+
+% android_app.tex
+
+\chapter{Android-App: ApoCo}
+
+Dieses Kapitel beschriebt die Android-App.
+Sie dient dem an Adipositas erkrankten Patienten als \"Ubersicht und Eigenkontrolle f\"ur sein Essverhalten und K\"orperlichen-Zustand.
+Der App-Projektname lautet \emph{ApoCo}. Er ist von der Bezeichnung \emph{Adipositas-Controlling} abgeleitet.
+Die App wird in diesem Kapitel durch Designentscheidungen in der Architektur, GUI und Implementierung beschrieben.
+
+\input{kapitel/android_app_section/modelierung}
+
+\input{kapitel/android_app_section/apoco_projektstruktur}
+
+\input{kapitel/android_app_section/architektur_der_apoco_datenbank}
+
+\input{kapitel/android_app_section/bluetooth_kommunikation}
+
+\input{kapitel/android_app_section/datensynchronisation_rest}
+
+\input{kapitel/android_app_section/barcodeskanner}
+
+\input{kapitel/android_app_section/apoco_use_cases}
+
+\input{kapitel/gui_section/apoco_gui_gestaltung}
+
+
+

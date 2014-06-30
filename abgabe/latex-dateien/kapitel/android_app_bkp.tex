@@ -1,0 +1,635 @@
+
+% android_app.tex
+
+\chapter{Android-App: ApoCo}
+
+Dieses Kapitel beschriebt die Android-App.
+Sie dient dem an Adipositas erkrankten Patienten als \"Ubersicht und Eigenkontrolle f\"ur sein Essverhalten und K\"orperlichen-Zustand.
+Der App-Projektname lautet \emph{ApoCo}. Er ist von der Bezeichnung \emph{Adipositas-Controlling} abgeleitet.
+Die App wird in diesem Kapitel durch Designentscheidungen in der Architektur, GUI und Implementierung beschrieben.
+
+\input{kapitel/android_app_section/modelierung}
+% \section{Modelierung}
+% 
+% Die Software ist stark modularisiert und Dom\"anen orientiert aufgebaut.
+% Der Grund daf\"ur ist, die Software soll sp\"ater einfach und schnell erweitbar und \"anderbar sein.
+% Die Modularisierung erfolgt nach Funktionen und Teilaufgaben innerhalb einer Funktion.
+% ApoCo wird mittels verschiedener Architekturen realisiert.
+% Zu n\"achst ist die grobe Struktur der Android-Anwendung als \emph{Model-View-Controller (MVC)} modeliert.
+% Die einzelnen Schichten Model, View und Controller der Android-App sind wie in der Abbildung 4.1 aufgeteilt.
+% 
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[scale=0.7]{diagramme/kapitel4/MVC.png}
+%   \caption{MVC-Architektur der ApoCo-Anwendung}
+%  
+% \end{figure}
+% 
+% \begin{itemize}
+%  \item Model: Die Model-Schicht ist die interne Datenbank der ApoCo-App.
+%  Als Datenbank nutzt Android SQLite.
+%  Dabei ist die Datenbank in Form einer Datei umgesetzt.
+%  Diese ist auf dem Dateisystem in Ordnern der ApoCo-App hinterlegt.
+%  Die Zugriffe auf diese Datenbank entsprechen zum gro\ss{}en Teil MySQL.
+%  
+%  \item View: Die View-Schicht wird durch \emph{ContentViews} einer Android-Acctivity representiert.
+%  Ein solcher Content wird in den meisten F\"allen in einer XML-Datei beschrieben.
+%  Diese Datei h\"allt die Struktur einer View, welche sich dem Benutzer anschlie\ss{}end auf dem Bildschirm presentiert.
+%   
+%  \item Controller: Die Controller-Schicht wird durch die Anwendungslogik in den Activities umgesetzt.
+%  Hier wird die Interaktion des Patienten mit ApoCo abgefangen und die Ausgaben f\"ur den Bildschirm gesteuert.
+% \end{itemize}
+% 
+% 
+% Wird das gesammte Projekt betrachtet handelt es sich dabei um eine Client-Server-Architektur.
+% In der Abbildung 4.2 wird die Aufteilung der einzelnen Software-Komponennten in der Client-Server-Architektur dargestellt.
+% 
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[scale=0.5]{diagramme/kapitel4/client_server.png}
+%   \caption{Client-Server-Architektur des gesammten Projektes}
+%   
+% \end{figure}
+% 
+% ApoCo ist der Client der Software welcher sich um das aufzeichnen von Tagesprotokollen k\"ummert.
+% Um die Daten auswerten zu k\"onnen benutzt der Arzt eine Webanwendung.
+% Das ist der Client f\"ur den Arzt, der sich mit dem Server verbindet und einen Zugriff auf die Tagesprotokolle des Patienten erlaubt.
+
+\input{kapitel/android_app_section/apoco_projektstruktur}
+% \section{Apoco Projektstruktur}
+% 
+% Die Abbildung 4.3 veranschaulicht die \emph{package} Struktur der ApoCo-App.
+% Sie spiegelt die Modularisierung der ApoCo-App wieder.
+% Im Ordner \emph{src} befindet sich der gesammte Sourcecode der Anwendung. 
+% Dieser liegt aufgeteilt in den jeweiligen Modul-Paketen im Haupt \emph{package} der Anwendung \emph{com.janas.apoco}.
+% 
+% \subsection{Paket activity}
+% 
+% Das Paket \emph{activity} beihnaltet alle f\"ur die ApoCo-App notwendigen Activities.
+% In diesem Paket befinden sich folgende Klassen:
+% 
+% \begin{itemize}
+%  \item ActivityBloodpressure:\\
+%  Hier steht die gesammte Anwendungslogik f\"ur das Protokolieren von Blutdruck.
+%  Die Activity veranschaulicht in einer scrollbaren Liste alle vorhandenen Messungen.
+%  Dar\"uberhinaus werden die Daten beim verlassen der Activity \"uber das Internet mit einem Webserver synchroniziert. 
+%  
+%  \item ActivityBodyweight:\\
+%  Diese Activity behandelt das Protokolieren von K\"orpergewicht des Patienten und beinhaltet die daf\"ur notwendige Anwendungslogik.
+%  Auch hier werden in einer Listenansicht alle get\"atigten Messungen angezeigt.
+%  Beim beenden der Activity werden die Protokole mit einem Webserver synchroniziert.
+%  
+%  \item ActivityDeviceList:\\
+%  Diese Activity ist notwendig f\"ur das Pairing \"uber Bluetooth von Sensoren mit dem Smartphone.
+%  Es ist eine von zwei m\"oglichkeiten des Pairing in der ApoCo-App.
+%  Hier verh\"allt sich das Smartphone wie ein Client.
+%  Die Activity hat zwei Listen.
+%  In der einen Liste werden bereist bekannte Ger\"ate aufgelistet und in der zweiten liste werden neu gefundene Ger\"ate aufgelistet, nach dem 
+%  man einen Suchforgang gestartet hat.
+%  Man w\"ahlt aus einen der Listen ein Ger\"at zum Koppeln aus und die ger\"ate verbinden sich untereinander.
+%  
+%  \item ActivityDevices:\\
+%  Diese Activity bietet die M\"oglichkeit an den Pair-Vorgang zu starten.
+%  Man w\"ahlt die art des Messger\"ates aus, zum Beispiel K\"orperwaage, Blutdruckmesser oder Lebensmittelwaage.
+%  Anschliessen w\"ahlt man die Pair-Art aus.
+%  Zur Auswahl stehen die M\"oglichkeiten \emph{als Server} und \emph{als Client} zu verf\"ugung.
+%  Die Client-Methode wird mittels der ActivityDeviceList-Activity ausgef\"uhrt.
+%  Die Server-Methode erledigt die ActivityDevices selbst.
+%  Daf\"ur startet sie ein Thread mit einem BluetoothServerSocket.
+%  Dieser h\"ohrt auf anfragen von externen Ger\"aten zum Pairing.
+% 
+%  \item ActivityFoodKcal:\\
+%  Die Activity informiert den Benutzer \"uber die f\"ur den aktuellen Tag zugef\"uhrten Kalorien und dar\"uber wieviele noch erlaubt sind.
+%  In einer Liste werden vorhergehende Mahlzeiten aufgelistet.
+%  Beim klicken auf eine Mahlzeit wird die \emph{ActivityMealenergyDeteils} Activity als \emph{Dialog} eingeblendet und listet die einzelnen
+%  Positionen der Mahlzeit mit Informationen \"uber Energie und Gewicht auf.
+%  Von hieraus gelangt der Benutzer weiter zur Protokolierung einer neuen Mahlzeit und zur Ger\"ate-Pairing.
+%  
+%  \item ActivityMealenergy:\\
+%  Beim Start ist die Activity immer leer.
+%  Der Benutzer st\"ost von hier aus den Protokolierungsforgang an.
+%  \"Uber den Barcode-Button startet der Benutzer eine App f\"ur das Skannen von EAN-Codes.
+%  Anschliessend wird eine Interne und Externe Datenbank nach der geskannten EAN-Nummer durchgesucht.
+%  Wird ein Eintrag gefunden gelangt der Benutzer zur ActivityMealContent, sonst wird eine Fehlmeldung ausgegeben, dass das Lebensmittel
+%  nicht identifiziert werden konnte.
+% 
+%  \item ActivityMealenergyContent:\\
+%  In diese Activity gelangt man nur \"uber eine positive Erkennung des Barcodes.
+%  Hier bekommt der Benutzer eine Information \"uber das geskannte Lebensmittel und kann das Smartphone, \"uber den Button \emph{Waage verbinden?} mit eiener
+%  Lebensmittelwaage verbinden.
+%  Nach erfolgreicher W\"agung errechnet die Activity die Energiemenge des gewogenen Lebensmittels, die Gesammtenergie aller Mahlzeiten f\"ur den aktuellen Tag und
+%  die noch zu ferf\"ugung stehende Energiemenge f\"ur den aktuellen Tag.
+% 
+%  \item ActivityMealenergyDetails:\\
+%  Diese Activity erscheint ledeglich im Style eines \emph{Dialog}.
+%  Das bedeutet die alte Activity geht in den Hintergrund, bleibt aber sichtbar und die Dialog-Activity tritt wie ein Pop-up, modal in den Vordergrund.
+%  Sie besteht nur aus einer scrollbaren Liste und zeigt Deteils einer Mahlzeit auf.
+% %  \item ActivityFoodKcalNewEntry:\\
+% 
+%  \item ActivityLogin:\\
+%  Diese Activity dient dem Anmelden in der ApoCo-App.
+%  Alternativ kann ein neuer Benutzer zur ActivityRegister wechseln um sich zu Registrieren. 
+%  
+%  \item ActivityRegister:\\
+%  Die Activity tritt als modaler Dialog auf und dient der Erfassung eines neuen Benutzers.
+%  Hier tr\"agt der Benutzer seine Daten wie Vor- und Nachname, Email und Passwort.
+%  Die Activity f\"uhrt eine Plausibilit\"atskontrolle durch.
+%  Anschlissend sendet sie die Daten an einen Webserver welcher \"uberpr\"ufft ob der Benutzername bereist vergeben ist oder nicht und nimmt den 
+%  neuen Benutzer auf oder lehnt ihn ab.
+%  Die Activity reagiert auf die Serverantwort und akzeptiert entsprechend die Benutzerdaten oder vordert ihn erneut auf seine Eingabe zu \"uberarbeiten.
+%  
+%  \item ActivityServerOptions:\\
+%  Diese Activity erscheint als modaler Dialog und nimmt ledeglich die Webserver-Adresse und Port entgegen.
+% 
+%  \item ActivitySplashscreen:\\
+%  Das Splashscreen wird beim Start von ApoCo f\"ur wenige Sekunden angezeigt.
+%  Diese Activity presentiert das Logo von ApoCo und eine \"Uberschrift \emph{(Adipositas Controlling} alz Information \"uber die Aufgabe von ApoCo.
+%  Die Activity beendet sich nach einem Timerablauf automatisch und startet die Start-Activity von ApoCo.
+% 
+%  \item ActivityStart:\\
+%  Das ist die Hauptactivity in der ApoCo-App.
+%  Hier w\"ahlt man die Art der Protokolierung aus.
+%  Das kann zum Beispiel sein eine K\"orpergewichtsmessung, Blutdruckmessung oder das Protokolieren der eigenen Nahrungsaufnahme.
+%  Dar\"uberhinaus hat der Benutzer von hier aus den Zugriff auf die Funktion zum Koppeln von Messsensoren.
+% 
+%  %  \item ActivitySummary:\\
+% \end{itemize}
+% 
+% 
+% 
+% 
+% Das Paket activity beinhaltet ausserdem das Unterpaket \emph{interfaces}.
+% 
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[scale=0.7]{screenshots/kapitel4/projekt_struktur/projekt_struktur_pakete.png}
+%   \caption{Projekt-Paketstruktur der ApoCo-App}
+%   
+% \end{figure}
+% 
+% \subsection{Paket interfaces}
+% 
+% Im Paket Interfaces befinden sich Interface-Klassen welche das Zusammenspiel zwischen Activities und Objekten f\"ur Anwendungslogik unterstz\"utzen.
+% Besonders wichtig ist hier der Zugriff auf bestimmte Objektmethoden und damit zusammenh\"angende Polymoorphie.
+% Folgende Interfaces liegen im Paket vor:
+% 
+% \begin{itemize}
+%  \item AccessableCreatorIF:\\
+%  Dieses Interface dient zum erzeugen von unterschiedlichen Threads zur Kommunikation zwischen Software und externen Sensoren.
+%  Dies gelingt durch Polymorphie.
+%  F\"ur Jeden Sensor steht ein spezialisierter Thread zur kommunikation bereit.
+%  \"Uber dieses Interface wird immer das richtige Objekt durch die jeweilige Activity erzeugt und weiter gereicht.
+% 
+%  \item ActivityExtrasCodesIF:\\
+%  In Android ist es m\"oglich Objekte oder einzelne Werte zwischen den Activitys auszutauschen.
+%  Daf\"ur sind in diesem Interface Konstanten f\"ur Benennung der Daten bereitgestellt, welche irgend wo in der ApoCo-App zwischen den Activities, 
+%  \"uber den Intent-Extras-Mechanismus ausgetauscht werden.
+%  \item ActivityRequestCodesIF:\\
+%  Soll aus einer Activity eine weitere gestartet werden und erwatet man von dieser eine Antwort, so wird bei diesem Vorgang ein \emph{RequestCode} mitgegeben
+%  der nach Ablauf einer Aufgabe als Antwort zur\"uck zur Urspr\"unglichen Activity zur\"uck kommt.
+%  Mit diesem RequestCode kann die Activity unterscheiden welche Antwort sie gerade bekommen hat.
+%  \item CloseableIF:\\
+%  Eine Activity welche dieses Interface implementiert, darf zum Beispiel von einem Thread oder Handler geschlossen werden.
+% %  \item MessageDisplayableIF:\\
+%  \item WriteToPerformableIF:\\
+%  Dieses Interface muss von einer Activity implementiert werden, wenn sie eine Nachricht \"uber Bluetooth versenden muss.
+%  Die Nachricht wird an ein Thread \"ubergeben und dieser schreibt sie dann in den Streaminput eines BluetoothSocket.
+% \end{itemize}
+% 
+% \subsection{Paket arrayadapter}
+% 
+% Im Paket arrayadapter befinden sich Implementierungen von performanten ArrayAdaptern.
+% Werden Daten in einer ListView dargestellt so kann man sie bequem aus einem Container, mittels einem ArrayAdapter in die ListView laden.
+% Die meisten Listen in ApoCo benutzen keine standard Darstellung von Daten in einer ListView sondern eine individuell zugeschnittene Version.
+% F\"ur diesen Zweck ben\"otigt man einen zugeschnittenen ArrayAdapter dessen Funktionalit\"at implementiert werden muss.
+% Die eigenen ArrayAdapter sind in der Lage Daten zwischenzuspeichern, wenn durch die ListView hin und her gescrollt wird.
+% Diese Daten m\"ussen nicht mehr nachgeladen werden und das sorgt f\"ur bessere Performance.\\
+% Im Paket arrayadapter befindet sich ein Unterpaket.
+% Hier werden \emph{Model-Klassen} hinterlegt.
+% Das sind Daten-Container welche Informationen f\"ur genau eine Messung speichern.
+% Zus\"atzlich bietet jedes Model eine Static-Methode an um aus einem Datenobjekt, welches aus der Datenbank gelesen wurde, ein Objekt vom Typ des eigenen Model zu erzeugen.
+% Jede ListView findet hier einen eigenen ArrayAdapter und das dazugeh\"orige Model.
+% 
+% \subsection{Paket bluetooth}
+% 
+% In diesem Paket befinden sich Klassen und Interfaces, welche sich um die Kommunikation \"uber Bluetooth k\"ummern.
+% \begin{itemize}
+%  \item AcceptThread:\\
+%  Diese Klasse ist ein Thread, der einen BluetoothServerSocket startet und auf ankommende Anfragen zur Kommunikation wartet.
+%  Das ist der erste Schritt von Kommuikationsaufbau.
+%  
+%  \item AccessableIF:\\
+%  \"Uber dieses Interface kommunizieren Activities mit Threads, welche eine BluetoothSocket verbindung halten.
+%  
+%  \item BluetoothManager:\\
+%  Der BluetoothManager soll die gesammte Funktionalit\"at um Bluetooth in einer Klasse vereinigen.
+%  Mit dem BluetoothManager Objekt wird die Kommunikation aufgebaut, kontroliert und beendet.
+%  
+%  \item ConnectingThread:
+%  Dieser Thread ist der zweite Schritt zur Kommunikation \"uber Bluetooth.
+%  Er \"offnet einen Socket zur Gegenstelle und sendet Daten zwischen der Gegenstelle und der Activity.
+%  
+%  \item HandlerMessageIF:\\
+%  Dieses Interface beinhaltet alle Konstanten f\"ur einen Nachrichtenaustausch \"uber einen Handler.
+%  Die Konstanten erm\"oglichen der Activity zu erkennen wie sie mit der Nachricht umgehen soll.
+%  
+%  \item PairingThread:\\
+%  Das ist ein Thread der keine Kommunikation aufbaut.
+%  Er wird nur ganz kurz f\"ur das Koppeln von Smartphone und einem Sensor genutzt.
+% 
+%  \item StandardUUIDsIF:\\
+%  Dieses Interface ist vorgesehen um bekannte standard UUIDs als Konstante bereitzustellen.
+%  
+%  \item StartableCanceableIF:\\
+%  Dieses Interface schreibt einem Thread vor, dass er von Au\ss{}en gestartet und beendet werden kann.
+% \end{itemize}
+% 
+% \subsection{Paket bodytel}
+% 
+% Dieses Paket beinhaltet alle Klassen und Interfaces die nottwendig sind um eine Kommunikation mit Ger\"aten
+% der Firma Bodytel herzustellen.
+% Im Augenblick werden die Sensoren WeightTel und PressureTel unterst\"utzt.
+% 
+% \begin{itemize}
+%  \item BloodpressureResult:\\
+%  Nach einer Blutdruckmessung wird aus dieser Klasse ein Objekt erzeugt und mit den Messwerten initialisiert.
+%  Das Objekt wird anschliessend in ein Model- und ein DTO-Objekt, zum anzeigen in einer ListView und zum speichern in der Datenbank konvertiert.
+%  
+%  \item BodyTelUUIDsIF:\\
+%  Dieses Interface stellt Konstanten bereit, welche von der Firma BodyTel als UUIDs f\"ur die Bluetoothverbindung genutzt werden.
+%  
+%  \item BodyweightResult:\\
+%  Nach einer K\"orpergewichtsmessung wird aus dieser Klasse ein Objekt erzeugt und mit den Messwerten initialisiert.
+%  Das Objekt wird anschliessend in ein Model- und ein DTO-Objekt, zum anzeigen in einer ListView und zum speichern in der Datenbank konvertiert.
+%  
+%  \item PressureTelConnectedThread:\\
+%  Dieser Thread baut ein BluetootkSocket zwischen Smartphone und dem PressureTel-Blutdruckmesser auf.
+%  
+%  \item PressureTelCreator:\\
+%  Eine Activity nutzt diese Klasse um den BluetoothManager mitzuteilen dass beim BluetoothVerbindungs-Aufbau ein Thread zur Kommunikation mit dem PressureTel gew\"unscht wird.
+%  
+%  \item PressureTelMeasurementDecoder:\\
+%  Diese Klasse dekodiert eine Nachricht von dem Blutdruck-Sensor.
+%  Daf\"ur wird die Nachricht in eiem \emph{PressureTelSMS}-Objekt gewrappt und alle Messungen die in der Nachricht enthalten sind als seperate \emph{BloodpressureResult}-Objekte
+%  in einer \emph{List} zur\"uckgegeben.
+%  
+%  \item PressureTelMessageProtocol:\\
+%  Ger\"ate der Firma BodyTel erwarten eine Art Konversations-Protokoll.
+%  Um die Messwerte auszulesen muss dieses Protokoll erf\"ullt werden.
+%  In diesem Interface werden die notwendigen Konstanten f\"ur die Kommunikation mit dem Sensor PressureTel bereitgestellt.
+%  
+%  \item PressureTelMessageReader:\\
+%  Diese Klasse reagiert nach Protokoll auf Anfragen bei der Kommunikation mit dem PressureTel-Blutdrucksensor.
+%  Sie nutzt die anderen PressureTel-Klassen um eine Nachricht zu analysieren, auf die zu antworten, Messwerte aus dieser zu dekodieren und sie in einer Liste an die Activity weiter zu geben. 
+%  
+%  \item PresurreTelSMS:\\
+%  Diese Klasse ist eine Wraper-Klasse f\"ur eine SMS-Nachricht des PressureTel-Sensors.
+%  Ein Objekt von dieser Klasse wird mit einer SMS initialisiert und konvertiert sie in ein f\"ur ApoCo verwendbares Format.
+%  
+%  \item WeightTelConnectedThread:\\
+%  Dieser Thread baut ein BluetootkSocket zwischen Smartphone und der WeightTel-K\"orperwaage auf.
+%  
+%  \item WeightTelCreator:\\
+%  Eine Activity nutzt diese Klasse um den BluetoothManager mitzuteilen dass beim BluetoothVerbindungs-Aufbau ein Thread zur Kommunikation mit dem WeightTel gew\"unscht wird.
+%  
+%  \item WeightTelMeasurementDecoder:\\
+%  Diese Klasse dekodiert eine Nachricht von dem K\"orpergewicht-Sensor.
+%  Daf\"ur wird die Nachricht in eiem \emph{WeightTelSMS}-Objekt gewrappt und alle Messungen die in der Nachricht enthalten sind als seperate \emph{BodyweightResult}-Objekte
+%  in einer \emph{List} zur\"uckgegeben.
+%  
+%  \item WeightTelMessageProtocol:\\
+%  In diesem Interface werden die notwendigen Konstanten f\"ur die Kommunikation mit dem Sensor WeightTel bereitgestellt.
+%  
+%  \item WeightTelMessageReader:\\
+%  Diese Klasse reagiert nach Protokoll auf Anfragen bei der Kommunikation mit dem WeightTel-K\"orpergewichtssensor.
+%  Sie nutzt die anderen WeightTel-Klassen um eine Nachricht zu analysieren, auf die zu antworten, Messwerte aus dieser zu dekodieren und sie in einer Liste an die Activity weiter zu geben.
+%  
+%  \item WeightTelSMS:\\
+%  Diese Klasse ist eine Wraper-Klasse f\"ur eine SMS-Nachricht des WeightTel-Sensors.
+%  Ein Objekt von dieser Klasse wird mit einer SMS initialisiert und konvertiert sie in ein f\"ur ApoCo verwendbares Format.
+% \end{itemize}
+% 
+% \subsection{Paket Database}
+% 
+% Die Klassen und Interfaces in diesem Paket erm\"oglichen einen Zugriff auf die interne SQLite- und die externe MySQL-Datenbank.
+% Im Unterpaket \emph{extern} befinden sich zwei Interfaces.
+% Das Interface \emph{ExternServerDIR} hat eine Konstante mit dem Verzeichnis auf dem Webserver wo sich die REST-Schnittstelle zum MySQL-Datenbankserver befindet.
+% Im Interface \emph{\texttt{PHP\_URL\_IF}} befinden sich Konstanten, welche PHP-URLs entsprechen.
+% Diese URLs erf\"ullen jeweils eine Funktionalit\"at der REST-Schnittstelle des Webservers.
+% Zum Beispiel entspricht die Konstante \emph{\texttt{REGISTER\_USER}} der URL \emph{\texttt{register\_user.php}}.
+% Ruft ApoCo diese URL mit den notwendigen Parametern auf, so ist es m\"oglich einen neuen User im System anzulegen.\\
+% 
+% Im Unterpaket \emph{local} sind Interfaces und Klasse f\"ur die Interne Datenbank auf dem Smartphone.
+% Das Paket beinhaltet weitere Unterpakete: \emph{column}, \emph{dto} und \emph{tbl}.
+% Dies geh\"ohrt zu einem Objektorientierten Konzept zum Zugriff auf die Datenbank, welches in einem Separaten Kapitel erl\"autert wird.
+% Des weiteren enth\"allt das Paket local die Klasse DBManagerLocal und das Interface DBManagerPreferencesIF.
+% Der DBManagerLocal dient jeder Aktivity als Zugriffsmanager auf die interne Datenbank.
+% Das Interface DBManagerPreferencesIF dient zum erstellen und der Konfiguration der Datenbank f\"ur die ApoCo-App.
+% 
+% \subsection{Paket generic}
+% 
+% In diesem Paket befinden sich drei Klassen f\"ur durchf\"uhrung einer W\"agemessung mit der Lebensmittelwaage.
+% \begin{itemize}
+%  \item GenericCreator:\\
+%  Diese Klasse erzeugt einen Thread zur Kommunikation zwischen einer Activity und der KERN-PCB Laborwaage.
+%  \item KcalConnectedThread:\\
+%  Dieser Thread baut einen BluetoothSocket mit der Waage auf und kommuniziert mit ihr.
+%  \item KcalResult:\\
+%  Diese Klasse representiert einen Messwert der Laboorwaage kombiniert mit Informationen \"uber einem durch den Barcode erkannten Lebensmittel.
+% \end{itemize}
+% 
+% \subsection{Paket kern}
+% 
+% In diesem Paket ist nur die Klasse \emph{\texttt{KERN\_PCB\_MessageBuilder}} enthalten.
+% Die Kern-Laborwaage sendet eine Messung als Datenschnippsel.
+% Diese Datenschnippsel werden in dieser Klasse gesammelt, analysiert und ein Messwert extrahiert.
+% Eine Activity kann anschliessend \"uber die Methode \emph{readMessage()} den Messwert auslesen.
+% 
+% \subsection{Paket network}
+% 
+% Hier befinden sich alle Klassen und Interfaces die notwendig sind f\"ur eine Kommunikation \"uber WLAN oder das Mobile-Netz.
+% \begin{itemize}
+%  \item \texttt{JSON\_TAG\_IF}:\\
+%  Dieses Interface stellt alle TAGs zu verf\"ugung, welche bei einem Datenaustausch mit dem Webserver im JSON-Format genutzt werden.
+%  
+%  \item NetworkHandler:\\
+%  Diese Klasse ist ein Handler der in jeder Activity genutzt wird, welche mit dem Webserver kommunizieren muss.
+%  Vor einem Datenaustausch wird \"uberpr\"uft ob eine WLAN- oder Mobile-Netz-Verbindung besteht und ob der Webserver antwortet.
+%  Je nach Ergebnis reagiert der Handler und benachrichtigt den Benutzer wenn der Server nicht erreichbar ist.
+%  Eine Activity kann von diesem Handler geschlossen werden.
+%  Dazu muss sie das Interface CloseableIF implementieren und mit einem Flag best\"atigen.
+%  Durch das Interface ist sie \emph{beenderbar} aber erst mit dem Flag wird dies auch abh\"angig von der Situation angefordert.
+% \end{itemize}
+% 
+% Im Unterpaket \emph{asynctask} befinden sich Klassen welche von der Klasse \emph{AsyncTask<T,T,T>} abgeleited werden.
+% Es handelt sich dabei um Threads, welche einen Teil der Arbeit im UI-Thread durchf\"uhren und den Hauptteil als Nebenl\"aufigkeit.
+% Mit diesen Threads wird je eine bestimmte Netzwerk-Funktionalit\"at der ApoCo-App erledigt.
+% 
+% \subsection{Paket preferences}
+% 
+% Dieses Paket beinhaltet den \emph{PreferencesManager} und ein Interface \emph{\texttt{APOCO\_PREFERENCES}}.
+% Der PreferencesManager behandelt ApoCo spezifische Parameter.
+% Normalerweise k\"onnen Werte in einer Datei oder Datenbank persistent Gespeichert werden.
+% \emph{Shared Preferences} ist eine weitere M\"oglichkeit in Android, Applikationsbezogene Werte als eine art \emph{Key-Value}-Paar zu speichern.
+% Das Interface \texttt{APOCO\_PREFERENCES} beinhaltet alle \emph{keys} f\"ur den Zugriff auf die Schared-Preferences.
+% 
+% \subsection{Paket tools}
+% 
+% Das Paket tools beinhaltet Werkzeuge die Projekt\"ubergreiffend oder an mehreren Stellen im Projekt n\"utzlich sein k\"onnen.
+% 
+% \begin{itemize}
+%  \item BloodpressureDiagnose:\\
+%  Diese Klasse bietet Funktionen die eine einfache Interpretation von Blutdruckwerten \"ubern\"ahmen.
+%  Man \"ubergibt Blutdruckwerte an die Methode \emph{performDiagnose()} und bekommt eine Aussage \"uber die Messung.
+%   
+%  \item BodyweightDiagnose:\\
+%  Diese Klasse errechnet die Differenz zwischen Dem Zielk\"orpergewicht und dem Aktuellen K\"orpergewicht.
+%  
+%  \item ConnectivityTest:\\
+%  Mit dieser Klasse ist es m\"oglich durch den Aufruf der Methode \emph{isAnyNetworkReachable()} festzustellen ob das Smartphone \"uber WLAN oder Mobile-Netz mit 
+%  dem Internet verbunden ist.
+%  
+%  \item DateTemplateIF:\\
+%  Dieses Interface enth\"allt Datum-Muster als Konstanten f\"ur eine Konvertierung eines Datums in ein Bestimmtes Format, welches durch das Muster vorgegeben wird.
+%  
+%  \item FloatPrecision:\\
+%  Diese Klasse \"uberpr\"uft einen Flieskomawert ob er Nahe der Zahl Null liegt. F\"ur den Test ist ein Epsilon f\"ur die Prezision notwendig.
+%  
+%  \item HexConverter:\\
+%  Diese Klasse bietet mehrere Methoden an um Hexadezimal-Codierte Bytearrays in lesbare String umzuwandeln und umgekehrt.
+%  
+%  \item JSONParser:\\
+%  Diese Klasse erleichtert das Senden und Empfangen von JSON-Strings zwischen einer App und einem Webserver.
+%  Dabei ist es m\"oglich die HTTP-Methoden POST und GET zu benutzen.
+%  Die Serverantwort wird als JSON-Objekt zur\"uckgegeben.
+%  
+%  \item PasswordCheck:\\
+%  Diese Klasse \"uberpr\"uft ob ein Passwort der gew\"unschten Vorgabe entspricht.
+%  Es wird die Mindestl\"ange und die wiederhollte Eingabe des Passwortes gepr\"uft.
+%  
+%  \item ResourcesTools:\\
+%  Diese Klasse ist ein Wraper um aus Android-Ressourcen eine String-Resource zu lesen.
+%  
+%  \item TimeTools:\\
+%  Diese Klasse konvertiert einen Timestamp von Typ Long in einen String mit dem Format: \emph{dd-MM-yyyy HH:mm} und umgekehrt.
+%  
+%  \item Toasting:\\
+%  Diese Klasse erleichtert Informationen mittels einen Toast anzuzeigen.
+%  Der hier ausgegebene Toast entspricht nicht den standard Vorgaben sonden ist individualisiert.
+%  
+%  \item URLBuilder:\\
+%  Diese Klasse bietet die Methode \emph{getURL()} an.
+%  Mit dieser Methode wird aus Parametern und einem formatiertbaren String eine vollst\"andige URL-Adresse zusammen gef\"ugt.
+% \end{itemize}
+% 
+% \subsection{Paket zxing}
+% 
+% Dieses Paket enth\"allt zwei Klassen.
+% \emph{IntentIntegrator} und \emph{IntentResult}.
+% Diese zwei Klassen sind notwendig um eine externe Barcode-Skanner-App zu nutzen.
+% Die App wird mit der Unterst\"utzung dieser Klassen in die eigene App integriert und man erh\"allt Zugriff auf das den Barcode als String.
+
+\include{kapitel/android_app_section/architektur_der_apoco_datenbank}
+% \section{Architektur der ApoCo-Datenbank(SQLite)}
+% 
+% blabla \cite[S.244]{Android:02}
+
+
+
+\include{kapitel/android_app_section/apoco_use_cases}
+
+% \section{ApoCo Use Cases}
+% 
+% \subsection{Use Case- Diagramm}
+% 
+% Die Abbildung 4.3 veranschaulicht ein Use Case- Diagramm der ApoCo-App.
+% Hier werden Interaktionsm\"oglichkeiten des Benutzers mit der Android-App und die kommunikation mit dem Webserver abgebildet.
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[scale=0.55]{diagramme/kapitel4/use_cases.png}
+%   \caption{ApoCo Use Case- Diagramm}
+%   
+% \end{figure}
+% 
+% \subsection{Aktoren}
+% 
+% \begin{itemize}
+%  \item Patient: Benutzer der ApoCo-App
+%  \item Webserver: Webserver mit Service zur Verwaltung der Tagesprotokolle
+% \end{itemize}
+% 
+% \subsection{Use Case Kurzbeschreibungen}
+% 
+% \begin{itemize}
+%  \item UC01: User Login\\ 
+%  Der Benutzer Meldet sich an der ApoCo-App an.
+%  \item UC02: Register new User\\ 
+%  Ein neuer Benutzer Registriert sich im System.
+%  Die Benutzerdaten werden zum Server gesendet und von diesem erlaubt oder verweigert.
+%  \item UC03: Bodyweight\\ 
+%  Der Benutzer f\"uhrt eine K\"orpergewichtsmessung durch.
+%  Zielgewicht wird vom Server geladen.
+%  Die Messung wird an den Server gesendet.
+%  \item UC04: Bloodpressure\\ 
+%  Der Benutzer f\"uhrt eine Blutdruckmessung durch.
+%  Die Messung wird an den Server gesendet.
+%  \item UC05: Kcal\\ 
+%  Der Benutzer f\"uhrt eine Protokolierung seiner Mahlzeit durch.
+%  Informationen zum Lebensmittel werden vom Webserver geladen.
+%  Mahlzeitprotokol wird an den Server gesendet.
+%  \item UC05.1: Barcode Scann\\ 
+%  Der Benutzer Skannt w\"ahrend einer Mahlzeitprotokolierung ein Lebensmittel mittels Barcode-Skanner ein.
+%  \item UC06: Pair new Device\\ 
+%  Der Benutzer f\"uhrt ein Ger\"ate-Pairing durch.
+%  \item UC07: edit Server Address\\ 
+%  Der Benutzer konfiguriert die Web-Adresse des Servers.
+% \end{itemize}
+
+
+\section{FUCK}
+
+
+ F\"ur jede Messung wird eine andere Sensorart ben\"otigt und diese Sensoren benutzen jeweils ein eigenes Protokol zur Kommunikation.
+ \"Uber dieses Interface wird daf\"ur gesorgt dass f\"ur die jeweilige Messung immer der entsprechende Thread erzeugt wird, welcher \"uber das entsprechende
+ Protokol des Sensors 
+ Dieses Interface dient der Polymorphie.
+ Als \emph{Accessable} wird ein Thread angesehen der ein Socket \"uber Bluetooth zum Sensor aufbaut.
+ Accessable hat hier die Bedeutung, die Activity hat zugrif auf den Thread.
+ Um das zu verdeutlichen wird das im Listing 4.1 verdeutlicht.
+ Die Activity \emph{ActivityBloodpressure} ruft nach dem sie gestartet wurde irgend wann ihre Methode \emph{onStart()} auf.
+ In dieser Methode wird die Klasse \emph{BluetoothManager} verwendet, um einen \emph{BluetoothServerSocket} zu starten, welcher auf einkommende Nachrichten
+ von gekoppelten Sensoren h\"ohrt.
+ Der BluetoothManager bietet f\"ur diesen Vorgang die Methode \emph{listenForInquiryConnections()} an und
+ muss nach der Verbindung daf\"ur sorgen dass mit dem entsprechenden Messsensor kommuniziert wird.
+ F\"ur Blutdruck eben ein Blutdrucksensor.
+ Damit das funktioniert wird das AccessableCreatorIF Interface benutzt, welches von der jeweiligen Activity an den BluetoothManager \"ubergeben wird.
+ Es referenziert ein Objekt vom gew\"unschten Typ, von dem die Activity erwartet, dass es f\"ur Kommunikation mit dem richtigen Sensor sorgt.\\
+ 
+ \begin{lstlisting}[caption={Beispiel f\"ur ein einfaches HTML-Dokument}]
+ class ActivityBloodpressure { ... 
+    protected synchronized void onCreate() { ...
+       BTManager.listenForInquiryConnections(
+         mBloodpressureHandler
+         ,new PressureTelCreator()  //AccessableCreatorIF
+         ,BodyTelUUIDsIF.PRESSURETEL_UUID_SPP_1234,
+         SDP_SERVICE_NAME);
+    }
+ }
+ //implementiert AccessableCreatorIF
+ class PressureTelCreator implements AccessableCreatorIF { ...
+   public AccessableIF createAccessable(...) {
+      PressureTelConnectedThread connectedTask = null; ...
+      return connectedTask;
+   } 
+ }
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{ApoCo-GUI Gestaltung}
+
+So weit es von der Funktionalit\"at der einzelnen Activity zugelassen, sind alle Activities identisch strukturiert.
+Sie bestitzen immer die Elemente Header, Title, Body und Footer.
+Das einhalten der Struktur soll durch ein einheitliches Layout eine angen\"ahme und einfache Bedienung der Software erm\"oglichen.
+Die Abbildung 4.3 veranschaulicht und bennent die Haupt-Struktur-Elemente einer Activity an hand der Start-Activity der ApoCo-App.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{screenshots/kapitel4/gui/activity_struktur.png}
+  \caption{Start-Activity als Beispiel f\"ur Strukturierung}
+  
+\end{figure}
+
+Die Struktur-Elemente haben jeweils eine eigene Funktion.
+Im \emph{Header} ist immer das ApoCo-Logo und wenn notwendig ein \emph{Back-Button} angebracht.
+Der Title bereich informiert den Benutzer immer auf welcher Activity er sich im Augenblick befindet.
+Im Body sind Interaktions-Elemente oder weitere notwendige Informationen der aktuellen Activity angebracht.
+Das k\"onnen Buttons zum ansto\ss{}en von Messvorg\"angen oder ListViews sein.
+Eine ListView informiert den Benutzer \"uber alle bereits verzeichnette Messungen in der entsprechenden Activity.
+Ganz Unten am Ende der Activity ist der Footer.
+Er beinhaltet Buttons, mit dennen man in die Bereiche zum Ger\"ate-Pairing, Sprung zur Start-Activity und zur Server-Konfiguration gelangt.
+
+\subsection{Bedienelemente}
+Der Back-Button ist eines der Interaktions-Elemente welches den Benutzer zu der vorherigen Activity bringt.
+Die Abbildung 4.4 veranschaulicht einen Header mit Back-Button.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{screenshots/kapitel4/gui/header_backbtn.png}
+  \caption{Header einer Activity mit Back-Button}
+  
+\end{figure}
+
+
+
+Neben dem Back-Button gibt es noch weitere M\"oglichkeiten zu der vorhergehenden Activity zur\"uck zu kehren.
+Einige davon haben ledeglich die Funktionalit\"at \emph{zur\"uck und Daten verwerfen} und andere wiederrum \emph{zur\"uck und Daten speichern}.
+Die Abbildungen 4.5 und 4.6 veranschaulichen alle M\"oglichkeiten.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{screenshots/kapitel4/gui/back_btns.png}
+  \caption{Zur\"uck-M\"oglichkeiten einer Activity}
+  
+\end{figure}
+
+Die Abbildung 4.5 zeigt die Activity f\"ur Blutdruckmessung.
+Hier sind die Buttons mit Buchstaben von \emph{a} bis \emph{c} gekennzeichnet.
+\begin{itemize}
+ \item a) Back-Button, Daten werden nicht gespeichert, zur\"uck zu vorherigen Activity. 
+ \item b) OK-Button, Daten werden gespeichert, anschliessend zur\"uck zu vorherigen Activity.
+ \item c) Start- oder Messung-Auswahl-Activity, Sprung aus jeder Activity zur\"uck zur Start-Activity. Daten werden nicht gespeichert. 
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{screenshots/kapitel4/gui/hd_backbtn.png}
+  \caption{Zur\"uck mit einem dem Hardware-Button des Smartphones}
+  
+\end{figure}
+
+Der mit einem roten Kreis gekennzeichnete Hardware-Button des Smartphones f\"ur \emph{Zur\"uck}, wird in ApoCo wie der Back-Button implementiert.
+Hier findet kein Speichern der Daten statt.
+Befindet man sich in der Start-Activity beendet ein Dr\"ucken auf den Hardware-Taste die ApoCo-App.\\
+
+
+\subsection{Funktionsweise von ApoCo}
+
+Um ein Tagesprotokol aufzeichnen zu k\"onnen sind mehrere Schritte notwendig.
+\begin{itemize}
+ \item Der Patient registriert sich einmallig im System.
+ \item Der Patient meldet sich mit ApoCo an.
+ \item Die f\"ur die Messungen notwendige Hardware wird einmallig \"uber Bluetooth mit dem Smartphone bekannt gemacht. Das so genannte \emph{Pairing}.
+ \item Eine Messung wird ausgew\"ahlt und die f\"ur sie vorgesehene Hardware genutzt.
+ \item Die abgeschlossene Messung wird mit dem Server synchronisiert.
+\end{itemize}
+
+\subsubsection{Activitie-Map und Aufruf-Struktur}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.35]{diagramme/kapitel4/activity_map.png}
+  \caption{Zur\"uck mit einem dem Hardware-Button des Smartphones}
+  
+\end{figure}
+
+
+\subsection{Model}
+
+\subsection{View}
+\subsection{Controller}
+
+\section{Vorgehensmodell}
+
+Ein Teil der Funktionalit\"at wurde bereits im Praxissemester erarbeitet. 
+Die Bacherlorarbeit erweitert die Ergebnisse aus dem Praxissemester.
+Teilweise wurden die Ergebnisse zum Zweck der Erweiterung refaktoriert.
+Es wurde ein Iteratives- und Inkrementeles- Vorgehensmodell einges\"atzt.
+
+\section{Funktionale Anforderungen}
+
+
+
+ 

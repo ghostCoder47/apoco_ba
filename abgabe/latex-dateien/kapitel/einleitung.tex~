@@ -1,0 +1,94 @@
+%einleitung.tex
+
+\chapter{Einleitung} 
+
+\section{Motivation}
+
+Adipositas gilt in Deutschland als eine chronische Gesundheitsst\"orung.
+Diese geht aus einer falschen Ern\"ahrung und Stoffwechselproblemen hervor.
+Dabei leiden die Patienten an starkem \"Ubergewicht.
+Mangelnde Bewegung durch sitzende T\"atigkeiten am Arbeitsplatz und eine passive Freizeit beg\"unstigen zus\"atzlich die Entwicklung von \"Ubergewicht.
+Bleibt Adipositas unbehandelt, so kann es  zu schwerwiegenden Folgeerkrankungen f\"uhren wie etwa Bluthochdruck,
+Verkalkung der Herzkranzgef\"a\ss{}e, Zuckerkrankheit, Krebs, aber auch psychische Leiden nach sich ziehen.
+Hilfe findet man in Kliniken, Beratungsstellen, Selbsthilfe- und Wohngruppen.
+In der heutigen Zeit besitzt fast jeder B\"urger ein Smartphone.
+Android ist aktuell mit 79,3\% Marktanteil\cite{AndroidAnteile:01}  das meist verbreitete Smartphone-Betriebssystem der Welt.
+Es bietet aufgrund seiner vielseitigen Konnektivit\"at durch Technologien wie WLAN, 3G/4G und Bluetooth 
+eine exzellente Grundlage f\"ur die Entwicklung von Softwaresystemen zur Unterst\"utzung von Gesch\"aftsprozessen.
+Einige Hersteller haben sich bereits darauf spezialisiert sogenannte \emph{E-Helth} Systeme anzubieten.
+Dabei soll mit Hilfe von elektronischen Ger\"aten die Qualit\"at zur medizinischen Versorgung im Gesundheitswesen gesteigert werden. \\
+Das Ziel der Bachelorarbeit ist, die Entwicklung und Realisierung eines mehrschichtigen Softwaressystems
+zum Erfassen von Messdaten und Unterst\"utzung von Betreuer und Patient.
+
+
+
+
+\section{Aufgabenstellung im Detail}
+
+\subsection*{Praxisprojekt}
+
+In dem Praxisprojekt soll eine Android-Anwendung zum Monitoring der t\"aglichen Kalorienzufuhr von Patienten entwickelt und implementiert werden.
+Dabei wird die Anwendung eine Handykamera als Barcodescanner nutzen, um Lebensmitteleigenschaften aus dem Internet von einer Datenbank abzufragen.
+\"Uber die Differenzw\"agung und die Lebensmitteleigenschaften wird die entsprechende Kalorienzahl der entnommenen Menge
+in einem Tagesprotokoll festgehalten.
+Die Wiegedaten sollen \"uber Bluetooth \"ubertragen werden. 
+Die aufgezeichneten Tagesprotokolle werden zwecks sp\"aterer Auswertem\"oglichkeit in eine Webserver Datenbank gesendet.
+F\"ur die Auswertung soll eine Webanwendung entwickelt und implementiert werden, welche die Tagesprotokolle \"ubersichtlich veranschaulicht.
+
+
+\subsection*{Bachelorarbeit}
+
+W\"ahrend der Bachelorarbeit wird die in dem Praxisprojekt erstellte Arbeit erweitert und verbessert.
+Die Software soll Adipositaspatienten helfen durch eine \"Ubersichtsfunktion den Di\"atplan einzuhalten.
+Dem behandelnden Arzt soll die Software erm\"oglichen das Ern\"ahrungsverhalten seiner Patienten zu \"uberwachen und bei einer ambulanten 
+Adipositas-Betreuung zu unterst\"utzen.
+
+Zus\"atzlich zur Ermittlung der t\"aglichen Kalorienzufuhr wird 
+nun auch das K\"orpergewicht und der Blutdruck inklusive Puls erfasst und die Tagesprotokolle dadurch erweitert. 
+F\"ur das Erfassen der Daten sollen eine Bluetooth-f\"ahige K\"orperwaage und ein Blutdruckmessger\"at genutzt werden. 
+Die webseitige Anwendung wird mit der Ajax-Architektur umgesetzt.
+Die aufgezeichneten Daten sollen in einem Graphen, der \"uber ein Kalender gesteuert wird, dargestellt werden. 
+Der Arzt soll die M\"oglichkeit haben, die Aufl\"osung der dargestellten Daten zwischen Tag, Woche und Monat umzuschalten und 
+\"uber ein Kalender-Widget navigieren zu k\"onnen.
+Die Navigation erm\"oglicht es zum gew\"unschten Datum zu springen und das Wochenende kann an eine beliebige Stelle in der Darstellung ger\"uckt werden.
+Alle Daten werden als Liniendiagramme oder Liste dynamisch erstellt und visualisiert.
+Somit wird auch eine detailierte Einsicht in die Zusammensetzung der Mahlzeiten erm\"oglicht.
+Als weiterer wichtiger Aspekt soll ein Konzept von Sicherheitsmechanismen f\"ur die Endpunkt zu Endpunkt Verschl\"usselung der Daten ausgearbeitet werden.
+Das betrifft die Daten\"ubertragung vom Handy zum Server und vom Server zur Monitoring Software.
+ 
+
+\section{Aufbau der Arbeit}
+
+\begin{itemize}
+ \item Kapitel 1:\\
+ Das Kapitel 1 umfasst die Einleitung und gibt einen \"Uberblick \"uber die geleistete Arbeit und Motivation 
+ w\"ahrend der Zeit im Praxisprojekt und der Bacherlorarbeit.
+ 
+ \item Kapitel 2:\\
+ In diesem Kapitel werden die notwendigen Grundlagen f\"ur die verwendete Hardware, 
+ Technologien und Standards erl\"autert,
+ die wichtig f\"ur die Durchf\"uhrung des Projekts waren. 
+ Es wird unter anderem die Umsetzung von Ajax in einer Webanwendung anhand von Beispielen erkl\"art,
+ wie eine REST-Schnittstelle funktioniert oder ein EAN-Code aufgebaut ist.
+ 
+ \item Kapitel 3:\\
+ Dieses Kapitel stellt Verschl\"usselungsmechanismen vor,
+ mit denen eine sichere Daten\"ubertragung erm\"oglicht werden soll.
+ Es werden Hashfunktionen sowie Zwei-Wege-Verschl\"usselungen vorgestellt.
+ Au\ss{}erdem wird ein Konzept f\"ur eine sichere Web-API und eine verschl\"usselte Kommunikation einer Android-Anwendung ausgearbeitet.
+ 
+ \item Kapitel 4:\\
+ In diesem Kapitel werden Designentscheidungen bei der Modelierung der Android-Anwendung erl\"autert.
+ Es werden die verwendeten Architekturen und die Modelierung der persistierenden Schicht verdeutlicht.
+ Dar\"uber hinaus werden Hintergrundprozesse der Anwendung anhand von Beispiel-Codes und Diagrammen erkl\"art.
+ Am Ende wird die graphische Oberfl\"ache n\"aher eingegangen.
+ 
+ \item Kapitel 5:\\
+ Das Kapitel 5 besch\"aftigt sich mit der Webanwendung.
+ Wie schon bei der Android-Anwendung werden hier Designentscheidungen w\"ahrend der Softwareentwicklung besprochen.
+ Es wird auf die Umsetzung der Darstellung von Informationen in einem Graph und damit zusammenh\"angende Steuerprozesse durch ein Kalender-Widget eingegangen.
+ 
+ \item Kapitel 6:\\
+ Dieses Kapitel beinhaltet eine Zusammenfassung der erarbeiteten Ergebnisse
+ und einen Ausblick auf m\"ogliche Erweiterungen.
+\end{itemize}

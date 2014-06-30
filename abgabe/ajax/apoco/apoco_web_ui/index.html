@@ -1,0 +1,220 @@
+
+
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>ApoCo</title>
+        <link href="css/normalize.css" type="text/css" rel="stylesheet" media="screen" />
+        <link href="css/index.css" type="text/css" rel="stylesheet" media="screen" />
+        <link href="css/calendar.css" type="text/css" rel="stylesheet" media="screen">
+        <link href="css/patienen_liste.css" type="text/css" rel="stylesheet" media="screen">
+        
+        <script type="text/javascript" src="lib/js/xhrobject.js"></script>
+        <script type="text/javascript" src="lib/js/key_value_pair.js"></script>
+        <script type="text/javascript" src="lib/js/key_value_list.js"></script>
+        <script type="text/javascript" src="lib/js/ajaxmanager.js"></script>
+        <!-- <script type="text/javascript" src="lib/js/json2.js"></script>    -->     
+        <script type="text/javascript" src="lib/js/calendar.js"></script>
+        <script type="text/javascript" src="lib/js/drawer.js"></script>
+        <script type="text/javascript" src="lib/js/page_chooser.js"></script>
+        <script type="text/javascript" src="lib/js/btn_init.js"></script>
+        <script type="text/javascript" src="lib/js/tools/date_formater.js"></script>
+        <script type="text/javascript" src="lib/js/graph_drawer.js"></script>
+        
+        
+    </head> 
+    
+    <body>
+        
+         <div id="body">
+            
+            
+            <div id="header"> 
+                
+                
+                <table>
+                    <tr>
+                        <span>
+                            <td id="page_description">Adipositas Controling</td>
+                        </span>
+                        <span>
+                            <td id="logo">
+                                <img src="image/web-logo.png" />
+                            </td>
+                        </span>
+                    </tr>
+                </table>
+                
+            </div>
+            
+            
+            <div id="head-navigation">
+                
+                <table id="head-navigation-buttons">
+                    
+                    <tr>
+                        
+                        <td>
+                            <span>
+                                <button id="btn_back"> &lt&lt </button>
+                            </span>
+                        </td>
+                        
+                        <td>
+                            <span>
+                                <button id="btn_tag">Tag</button>
+                            </span>                            
+                        </td>
+                        
+                        <td>
+                            <span>
+                                <button id="btn_woche">Woche</button>
+                            </span>
+                        </td>
+                        
+                        <td>
+                            <span>
+                                <button id="btn_monat">Monat</button>
+                            </span>
+                        </td>
+                        
+                        <!-- <td>
+                            <span>
+                                <button id="btn_therapiezeit">Therapiezeit</button>
+                            </span>
+                        </td> -->
+                        
+                        
+                        <td id="currentDate"></td>        
+                        
+                        <td>
+                            <span>                              
+                                <button id="btn_heute">Heute</button>
+                            </span>
+                        </td>
+                           
+                        <td>
+                            <span>
+                                <button id="btn_prev-day">&lt</button>
+                            </span>
+                        </td>
+                        
+                        <td>
+                            <span>
+                                <button id="btn_next-day">&gt</button>
+                            </span>
+                            
+                        </td>
+                        
+                        
+                       
+                        
+                        
+                    </tr>
+                    
+                </table>
+                
+                
+                                
+            </div>
+            
+            
+            <div id="main">
+                
+                <div id="draw-holder"></div>
+                   
+                <div id="info-content-holder">
+                    
+                    <div id="calender-holder"></div>
+                    <div id="patient_info">
+                        <table width="395" border="0">
+                            
+                            <tr> <td colspan="1">Vorname</td> <td id="pat_vorname" colspan="4"></td> </tr>
+                            <tr> <td colspan="1">Nachname</td> <td id="pat_nachname" colspan="4"></td> </tr>
+                            <tr> <td colspan="1">Email</td> <td id="pat_email" colspan="4"></td>  </tr>
+                            <tr> <td colspan="1">Körpergewicht</td><td id="pat_gewicht" colspan="2"></td> <td colspan="2">kg</td> </tr>
+                            <tr> <td colspan="1">Wunschgewicht</td><td id="pat_zielgewicht" colspan="2"></td> <td colspan="1">kg</td><td><button id="btn_chng-goal-weight">ändern</button></td> </tr>
+                            <tr> <td colspan="1">Tageslimit</td> <td id="pat_tageslimit" colspan="2"></td> <td colspan="1">kcal</td><td><button id="btn_chng-tageslimit">ändern</button></td> </tr>                            
+                            <tr> <td colspan="5">RR / HF 4-Tage Schnitt</td> </tr>
+                            <tr> <td colspan="1">RR</td> <td id="pat_4ts_rr" colspan="2"></td> <td>mmHg</td> </tr>
+                            <tr> <td colspan="1">HF</td> <td id="pat_4ts_hf" colspan="2"></td> <td>bpm</td> </tr>
+                            <tr> <td colspan="1"><button id="btn_detailansicht">Detailansicht</button> </tr>
+                        </table>
+                        
+                    </div>                    
+                    
+                </div>
+                
+                
+                
+                
+            </div>
+            
+            
+            <div id="footer">
+                
+                <table id="footer_buttons">
+                    
+                    <tr>
+                        
+                        
+                        <td>
+                            <span>                              
+                                <button id="btn_rr-hf">RR / HF</button>
+                            </span>
+                        </td>
+                           
+                        <td>
+                            <span>
+                                <button id="btn_kcal-kg">kcal / kg</button>
+                            </span>
+                        </td>
+                        
+                        <td>
+                            <span>
+                                <button id="btn_all">all</button>
+                            </span>
+                            
+                        </td>
+                        
+                        <td>
+                            <span>
+                                <button id="btn_mahlzeiten">Mahlzeiten</button>
+                            </span>
+                            
+                        </td>
+                        
+                        <td>
+                            <span>
+                                <button id="btn_opt_tageslimit">Tageslimit : on</button>
+                            </span>
+                            
+                        </td>
+                        
+                        <td>
+                            <span>
+                                <button id="btn_opt_wunschgewicht">wunschgewicht : on</button>
+                            </span>
+                            
+                        </td>
+                       
+                       
+                    </tr>
+                    
+                </table>
+            </div>
+            
+            
+        </div>
+        
+        <script type="text/javascript" src="lib/js/apoco_web_ui_init.js"></script>
+        
+        
+    </body>
+    
+    
+</html>
