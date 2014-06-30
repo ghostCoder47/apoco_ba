@@ -1,0 +1,172 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{XML13b}
+
+\bibitem[AM11]{Android:02}
+{Arno, Becker} and {Marcus, Pant}, \emph{{Android 2, Grundlagen und
+  Programmierung}}, Addison-Wesley, 2011.
+
+\bibitem[And13]{AndroidAnteile:01}
+\emph{{Apple Cedes Market Share in Smartphone Operating System Market as
+  Android Surges and Windows Phone Gains, According to IDC}}, Website, 2013,
+  \url{http://www.idc.com/getdoc.jsp?containerId=prUS24257413}; Besucht am 10.
+  September 2013.
+
+\bibitem[AS07]{Bluetooth:03}
+Huang Albert~S., \emph{{Bluetooth Essentials for Programmers }}, Cambridge
+  University Press, 2007.
+
+\bibitem[AT-13]{AT-command:01}
+\emph{{AT-Befehlssatz}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/AT-Befehlssatz}; Besucht am 04. September
+  2013.
+
+\bibitem[Blu02]{Bluetooth:04}
+\emph{{Bluetooth wird IEEE-Standard}}, Website, 2002,
+  \url{http://www.tecchannel.de/netzwerk/networkworld/technologyupdate/402832/bluetooth_wird_ieee_standard/};
+  Besucht am 21. August 2013.
+
+\bibitem[Blu13a]{Bluetooth:01}
+\emph{{Bluetooth}}, Website, 2013,
+  \url{http://www.bluetooth.com/Pages/basics.aspx}; Besucht am 21. August 2013.
+
+\bibitem[Blu13b]{Bluetooth:02}
+\emph{{Bluetooth Special Interest Group (SIG)}}, Website, 2013,
+  \url{https://www.bluetooth.org/en-us}; Besucht am 21. August 2013.
+
+\bibitem[Blu13c]{BlueZ:01}
+\emph{{BlueZ never be supported from Android4.2}}, Website, 2013,
+  \url{http://idea2well.com/index.php?option=com_content&view=article&id=62:bluez-idea2well&catid=37:idea2well-android&Itemid=44};
+  Besucht am 10. September 2013.
+
+\bibitem[Bro13]{Broadcom:01}
+\emph{{Official Linux Bluetooth protocol stack}}, Website, 2013,
+  \url{http://www.bluez.org/}; Besucht am 10. September 2013.
+
+\bibitem[Chr07]{Ajax:02}
+Wenz Christian, \emph{{JavaScript und AJAX, Das umfassende Handbuch (Auflage
+  7)}}, Gallileo Press, 2007.
+
+\bibitem[Chr11]{JavaScript:01}
+\bysame, \emph{{JavaScript, Das umfassende Traning}}, DVD, 2011.
+
+\bibitem[CSS13]{CSS:01}
+\emph{{Cascading Style Sheets}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Cascading_Style_Sheets}; Besucht am 23.
+  August 2013.
+
+\bibitem[EAN13a]{EAN:02}
+\emph{{European Article Number}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/European_Article_Number#EAN-Strichcode_zur_Codierung_der_GTIN_.28ehem._EAN-13.29};
+  Besucht am 22. August 2013.
+
+\bibitem[EAN13b]{EAN:01}
+\emph{{Produkte überall finden}}, Website, 2013,
+  \url{http://ean-suche.org/ean-code-suche/}; Besucht am 22. August 2013.
+
+\bibitem[EAN13c]{EAN:03}
+\emph{{ZXing (Zebra Crossing)}}, Website, 2013,
+  \url{https://code.google.com/p/zxing/}; Besucht am 05. September 2013.
+
+\bibitem[ETS12]{ETSI:01}
+\emph{{ETSI}}, Website, 2012, \url{http://www.etsi.org/}; Besucht am 03.
+  September 2013.
+
+\bibitem[FDA13]{FDA:01}
+\emph{{Food and Drug Administration}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Food_and_Drug_Administration}; Besucht am
+  10. September 2013.
+
+\bibitem[HTM13]{HTML:01}
+\emph{{Hypertext Markup Language}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Hypertext_Markup_Language}; Besucht am 23.
+  August 2013.
+
+\bibitem[JK08]{Sicherheit:04}
+{James F., Kurose} and {Keith W., Ross}, \emph{{Computernetzwerke Der
+  Top-Down-Ansatz (Auflage 4)}}, Addison-Wesley, 2008.
+
+\bibitem[J"o10]{Sicherheit:01}
+Schwenk J"org, \emph{{Sicherheit und Kryptographie im Internet (Auflage 3)}},
+  Vieweg + Teubner Verlag, 2010.
+
+\bibitem[JSO13]{JSON:01}
+\emph{{JavaScript Object Notation}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/JavaScript_Object_Notation}; Besucht am 26.
+  August 2013.
+
+\bibitem[KER13]{KERNPCB}
+\emph{{KERN PCB 6000}}, Website, 2013,
+  \url{http://www.kern-sohn.com/data/zusatzseiten/downloads/z-cb-de-kp-precision-balances.pdf};
+  Besucht am 22. August 2013.
+
+\bibitem[med13]{med_93_42}
+\emph{{Medizinproduktrichtlinie}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Richtlinie_93/42/EWG_%C3%BCber_Medizinprodukte};
+  Besucht am 22. August 2013.
+
+\bibitem[Pic13]{PicoPlug}
+\emph{{Pico Plug}}, Website, 2013,
+  \url{http://www.bluetoothupgrades.de/pico_plug.htm}; Besucht am 22. August
+  2013.
+
+\bibitem[Pre13]{PressureTel}
+\emph{{PressureTel}}, Website, 2013,
+  \url{http://www.bodytel.com/pressuretel.html}; Besucht am 22. August 2013.
+
+\bibitem[ras13]{rasppi:01}
+\emph{{Raspberry Pi}}, Website, 2013, \url{http://www.raspberrypi.org/};
+  Besucht am 10. September 2013.
+
+\bibitem[RES13]{REST:01}
+\emph{{Representational State Transfer}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Representational_State_Transfer}; Besucht
+  am 23. August 2013.
+
+\bibitem[RWD13]{RWD:01}
+\emph{{Responsive Webdesign}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Responsive_Webdesign}; Besucht am 23.
+  August 2013.
+
+\bibitem[SG12]{PHP_MySQL:01}
+{Stefan, Reimers} and {Gunnar, Thies}, \emph{{PHP 5.4 \& MySQL 5.5 (Auflage
+  4)}}, Gallileo Press, 2012.
+
+\bibitem[Sic13a]{Sicherheit:05}
+\emph{{Advanced Encryption Standard}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Advanced_Encryption_Standard}; Besucht am
+  29. August 2013.
+
+\bibitem[Sic13b]{Sicherheit:06}
+\emph{{The Legion of the Bouncy Castle}}, Website, 2013,
+  \url{http://www.bouncycastle.org/}; Besucht am 31. August 2013.
+
+\bibitem[Sic13c]{Sicherheit:03}
+\emph{{Transport Layer Security}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Transport_Layer_Security}; Besucht am 29.
+  August 2013.
+
+\bibitem[Wei13]{WeightTel}
+\emph{{WeightTel}}, Website, 2013, \url{http://www.bodytel.com/weighttel.html};
+  Besucht am 22. August 2013.
+
+\bibitem[WHO13]{WHO:01}
+\emph{{World Health Organization}}, Website, 2013,
+  \url{http://www.who.int/en/}; Besucht am 11. September 2013.
+
+\bibitem[XML13a]{XML:01}
+\emph{{Extensible Markup Language}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Extensible_Markup_Language}; Besucht am 25.
+  August 2013.
+
+\bibitem[XML13b]{XML:02}
+\emph{{Websiteentwicklung: XML: Aufbau eines XML-Dokumentes}}, Website, 2013,
+  \url{http://de.wikibooks.org/wiki/Websiteentwicklung:_XML:_Aufbau_eines_XML-Dokumentes};
+  Besucht am 26. August 2013.
+
+\end{thebibliography}

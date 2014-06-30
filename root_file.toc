@@ -1,0 +1,80 @@
+\select@language {ngerman}
+\contentsline {chapter}{\numberline {1}Einleitung}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2}Aufgabenstellung im Detail}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Aufbau der Arbeit}{6}{section.1.3}
+\contentsline {chapter}{\numberline {2}Grundlagen}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Bluetooth}{9}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}RFCOMM}{9}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}UUID}{9}{subsection.2.1.2}
+\contentsline {subsubsection}{SPP}{10}{section*.8}
+\contentsline {section}{\numberline {2.2}Verwendete Hardware}{10}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Android Smartphone}{10}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}KERN PCB 6000-1 Laborwaage}{11}{subsection.2.2.2}
+\contentsline {subsubsection}{RS-232}{11}{section*.10}
+\contentsline {subsubsection}{Bluetooth-Dongle}{12}{section*.11}
+\contentsline {subsection}{\numberline {2.2.3}Bodytel WeightTel}{13}{subsection.2.2.3}
+\contentsline {subsubsection}{Technische Daten WeightTel:\cite {WeightTel}}{14}{section*.13}
+\contentsline {subsection}{\numberline {2.2.4}Bodytel PressureTel}{14}{subsection.2.2.4}
+\contentsline {subsubsection}{Technische Daten:\cite {PressureTel}}{15}{section*.14}
+\contentsline {section}{\numberline {2.3}EAN-Barcode}{15}{section.2.3}
+\contentsline {section}{\numberline {2.4}REST}{16}{section.2.4}
+\contentsline {section}{\numberline {2.5}Ajax-Architektur}{18}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}HTML und CSS}{20}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}DOM}{20}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}JavaScript}{23}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}XML und JSON}{25}{subsection.2.5.4}
+\contentsline {chapter}{\numberline {3}Sicherheit}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Verschl\"usselung}{27}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}MD5}{27}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}SHA}{28}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Zwei-Wege-Verschl\"usselung}{28}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}TLS/SSL}{29}{section.3.2}
+\contentsline {section}{\numberline {3.3}Sicherheitskonzept}{30}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Web-API}{30}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Android Sicherheit und Verschl\"usselung}{31}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Client-Server Kommunikation}{32}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Anwendungsserver und Datenbankserver}{32}{subsection.3.3.4}
+\contentsline {chapter}{\numberline {4}Android-App: ApoCo}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Modellierung}{33}{section.4.1}
+\contentsline {section}{\numberline {4.2}Apoco Projektstruktur}{34}{section.4.2}
+\contentsline {section}{\numberline {4.3}Architektur der ApoCo-Datenbank(SQLite)}{46}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Motivation}{46}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Architekturumsetzung}{46}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}ApoCo Datenbankdiagramm}{51}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Bluetoothkommunikation, Messung und Persistierung}{52}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Bluetoothkommunikation BodyTel}{54}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Dekodieren einer Messung}{55}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Anzeigen und Speichern der Messwerte}{56}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Datensynchronisation mit REST-Schnittstelle}{58}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Datensynchronisation}{58}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}REST-Schnittstelle}{60}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}Barcodescanner}{62}{section.4.6}
+\contentsline {section}{\numberline {4.7}ApoCo Use Cases}{64}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Use Case- Diagramm}{64}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Aktoren}{64}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.3}Use Case Kurzbeschreibungen}{64}{subsection.4.7.3}
+\contentsline {section}{\numberline {4.8}ApoCo-GUI Gestaltung}{66}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Bedienelemente}{67}{subsection.4.8.1}
+\contentsline {subsubsection}{Zur\"uck-Funktion}{67}{section*.27}
+\contentsline {subsubsection}{Ger\"ateverwaltung}{68}{section*.28}
+\contentsline {subsection}{\numberline {4.8.2}Activity-Wechsel mit Animation}{70}{subsection.4.8.2}
+\contentsline {subsection}{\numberline {4.8.3}Views und Struktur der gegenseitigen Aufrufe}{71}{subsection.4.8.3}
+\contentsline {chapter}{\numberline {5}Webanwendung: Controlling-Software}{75}{chapter.5}
+\contentsline {section}{\numberline {5.1}Modellierung}{75}{section.5.1}
+\contentsline {section}{\numberline {5.2}Anwendungslogik}{75}{section.5.2}
+\contentsline {section}{\numberline {5.3}Klasse Calendar}{79}{section.5.3}
+\contentsline {section}{\numberline {5.4}Kalendervisualisierung}{82}{section.5.4}
+\contentsline {section}{\numberline {5.5}Use Cases der Webanwendung}{83}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Use Case-Diagramm}{83}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Aktoren}{84}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Use Case Kurzbeschreibungen}{84}{subsection.5.5.3}
+\contentsline {section}{\numberline {5.6}Fundament der Anwendung}{85}{section.5.6}
+\contentsline {section}{\numberline {5.7}Webanwendung-GUI Gestaltung}{86}{section.5.7}
+\contentsline {chapter}{\numberline {6}Zusammenfassung / Ausblick}{91}{chapter.6}
+\contentsline {chapter}{Literaturverzeichnis}{95}{chapter*.29}
+\contentsline {chapter}{Abbildungsverzeichnis}{99}{chapter*.30}
+\contentsline {chapter}{Listings}{101}{chapter*.31}
+\contentsline {chapter}{\numberline {A}Anhang}{103}{appendix.A}
+\contentsline {section}{\numberline {A.1}Glossar}{103}{section.A.1}
+\contentsline {section}{\numberline {A.2}CD-Inhalt}{103}{section.A.2}

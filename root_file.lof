@@ -1,0 +1,50 @@
+\select@language {ngerman}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces KERN PCB 6000 Laborwaage}}{12}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces KERN PCB 6000 Laborwaage, R\"uckseite mit RS-232-Schnittstelle}}{12}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Pico Plug Bluetooth-Dongle}}{13}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Bodytel WeightTel K\"orperwaage}}{14}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Bodytel WeightTel K\"orperwaage}}{15}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Beispiel f\"ur ein EAN Produkt Code}}{16}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Beispiel eine m\"oglichen REST-Anfrage}}{17}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Das Ergebnis im Browser aus dem Listing 2.3}}{21}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Das Ergebnis des Listing 2.3 als DOM-Struktur im Webbrowser Chrome}}{22}{figure.2.9}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Das Ergebnis im Browser aus dem Listing 2.4}}{23}{figure.2.10}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Der DOM-Baum nach Zugriff \"uber JavaScript}}{24}{figure.2.11}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces MD5 Hash aus dem String "Dawid Janas"{}}}{28}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Sicherheitskonzept als Diagramm}}{32}{figure.3.2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces MVC-Architektur der ApoCo-Anwendung}}{33}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Client-Server-Architektur des gesamten Projekts}}{34}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Projekt-Paketstruktur der ApoCo-Anwendung}}{38}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces ApoCo Datenbankdiagramm}}{53}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Sequenzdiagramm f\"ur Bluetoothverbindung und Datenaustausch}}{54}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Klassendiagramm f\"ur Dekodieren von Nachrichten}}{55}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Sequenzdiagramm f\"ur Dekodieren von Nachrichten}}{56}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Klassendiagramm, Visualisierung und Speicherung der Daten}}{57}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Sequenzdiagramm, Visualisierung und Speicherung der Daten}}{57}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Sequenzdiagramm f\"ur das Senden der Tagesprotokolle an den Webserver}}{59}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces ApoCo Use Case-Diagramm}}{65}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Start-Activity als Beispiel f\"ur Strukturierung}}{66}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Header einer Activity mit \emph {Back-Button}}}{67}{figure.4.13}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Zur\"uck-M\"oglichkeiten einer Activity}}{68}{figure.4.14}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Zur\"uck mit einem dem Hardware-Button des Smartphones}}{68}{figure.4.15}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Ger\"ateverwaltung}}{69}{figure.4.16}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Koppelungsactivity}}{69}{figure.4.17}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Serverkonfiguration}}{70}{figure.4.18}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces \"Ubergangsanimation}}{71}{figure.4.19}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Darstellung aller Activities}}{73}{figure.4.20}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Zustandsdiagramm f\"ur Beziehungen der gegenseitigen Aufrufe}}{74}{figure.4.21}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Calendar-Widget}}{80}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Use Case-Diagramm der Controlling-Software}}{84}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Wireframe f\"ur die Struktur der Webanwendung}}{86}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Startseite der Webanwendung}}{87}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces modale Dialoge zum \"Andern vom Zielgewicht und Tageslimit f\"ur einen Patienten}}{88}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Tagesprotokolle in der Graphansicht}}{89}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Mahlzeitenprotokoll}}{89}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Zustandsdiagramm der Websoftware}}{90}{figure.5.8}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

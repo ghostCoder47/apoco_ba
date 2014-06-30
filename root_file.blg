@@ -1,0 +1,86 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: root_file.aux
+A level-1 auxiliary file: start/kurzfassung.aux
+A level-1 auxiliary file: start/ehrenwoertliche_erklaerung.aux
+A level-1 auxiliary file: start/sperrvermerk.aux
+A level-1 auxiliary file: kapitel/einleitung.aux
+A level-1 auxiliary file: kapitel/grundlagen.aux
+A level-1 auxiliary file: kapitel/sicherheit.aux
+A level-1 auxiliary file: kapitel/android_app.aux
+A level-1 auxiliary file: kapitel/webanwendung.aux
+A level-1 auxiliary file: kapitel/zusammenfassung.aux
+The style file: amsalpha.bst
+A level-1 auxiliary file: kapitel/anhang.aux
+Database file #1: literatur/literatur.bib
+Warning--to sort, need author or key in AndroidAnteile:01
+Warning--to sort, need author or key in Bluetooth:01
+Warning--to sort, need author or key in Bluetooth:02
+Warning--to sort, need author or key in Bluetooth:04
+Warning--to sort, need author or key in KERNPCB
+Warning--to sort, need author or key in PicoPlug
+Warning--to sort, need author or key in WeightTel
+Warning--to sort, need author or key in PressureTel
+Warning--to sort, need author or key in med_93_42
+Warning--to sort, need author or key in FDA:01
+Warning--to sort, need author or key in EAN:01
+Warning--to sort, need author or key in EAN:02
+Warning--to sort, need author or key in REST:01
+Warning--to sort, need author or key in HTML:01
+Warning--to sort, need author or key in CSS:01
+Warning--to sort, need author or key in RWD:01
+Warning--to sort, need author or key in XML:01
+Warning--to sort, need author or key in XML:02
+Warning--to sort, need author or key in JSON:01
+Warning--to sort, need author or key in Sicherheit:05
+Warning--to sort, need author or key in Sicherheit:03
+Warning--to sort, need author or key in Sicherheit:06
+Warning--to sort, need author or key in ETSI:01
+Warning--to sort, need author or key in AT-command:01
+Warning--to sort, need author or key in EAN:03
+Warning--to sort, need author or key in WHO:01
+Warning--to sort, need author or key in BlueZ:01
+Warning--to sort, need author or key in Broadcom:01
+Warning--to sort, need author or key in rasppi:01
+You've used 36 entries,
+            2624 wiz_defined-function locations,
+            721 strings with 9278 characters,
+and the built_in function-call counts, 8536 in all, are:
+= -- 734
+> -- 115
+< -- 4
++ -- 32
+- -- 25
+* -- 566
+:= -- 1031
+add.period$ -- 36
+call.type$ -- 36
+change.case$ -- 154
+chr.to.int$ -- 29
+cite$ -- 94
+duplicate$ -- 514
+empty$ -- 1060
+format.name$ -- 35
+if$ -- 1951
+int.to.chr$ -- 8
+int.to.str$ -- 0
+missing$ -- 48
+newline$ -- 118
+num.names$ -- 20
+pop$ -- 354
+preamble$ -- 1
+purify$ -- 190
+quote$ -- 0
+skip$ -- 342
+stack$ -- 0
+substring$ -- 281
+swap$ -- 36
+text.length$ -- 4
+text.prefix$ -- 3
+top$ -- 0
+type$ -- 264
+warning$ -- 29
+while$ -- 16
+width$ -- 37
+write$ -- 369
+(There were 29 warnings)

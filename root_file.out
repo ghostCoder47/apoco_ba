@@ -1,0 +1,73 @@
+\BOOKMARK [0][-]{toc.0}{Inhaltsverzeichnis}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Einleitung}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Motivation}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Aufgabenstellung im Detail}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Aufbau der Arbeit}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.2}{Grundlagen}{}% 6
+\BOOKMARK [1][-]{section.2.1}{Bluetooth}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.1.1}{RFCOMM}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.2}{UUID}{section.2.1}% 9
+\BOOKMARK [1][-]{section.2.2}{Verwendete Hardware}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.1}{Android Smartphone}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.2}{KERN PCB 6000-1 Laborwaage}{section.2.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.3}{Bodytel WeightTel}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.4}{Bodytel PressureTel}{section.2.2}% 14
+\BOOKMARK [1][-]{section.2.3}{EAN-Barcode}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.4}{REST}{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.5}{Ajax-Architektur}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.5.1}{HTML und CSS}{section.2.5}% 18
+\BOOKMARK [2][-]{subsection.2.5.2}{DOM}{section.2.5}% 19
+\BOOKMARK [2][-]{subsection.2.5.3}{JavaScript}{section.2.5}% 20
+\BOOKMARK [2][-]{subsection.2.5.4}{XML und JSON}{section.2.5}% 21
+\BOOKMARK [0][-]{chapter.3}{Sicherheit}{}% 22
+\BOOKMARK [1][-]{section.3.1}{Verschl\374sselung}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.1.1}{MD5}{section.3.1}% 24
+\BOOKMARK [2][-]{subsection.3.1.2}{SHA}{section.3.1}% 25
+\BOOKMARK [2][-]{subsection.3.1.3}{Zwei-Wege-Verschl\374sselung}{section.3.1}% 26
+\BOOKMARK [1][-]{section.3.2}{TLS/SSL}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.3}{Sicherheitskonzept}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.1}{Web-API}{section.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.2}{Android Sicherheit und Verschl\374sselung}{section.3.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.3}{Client-Server Kommunikation}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.4}{Anwendungsserver und Datenbankserver}{section.3.3}% 32
+\BOOKMARK [0][-]{chapter.4}{Android-App: ApoCo}{}% 33
+\BOOKMARK [1][-]{section.4.1}{Modellierung}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.2}{Apoco Projektstruktur}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.3}{Architektur der ApoCo-Datenbank\(SQLite\)}{chapter.4}% 36
+\BOOKMARK [2][-]{subsection.4.3.1}{Motivation}{section.4.3}% 37
+\BOOKMARK [2][-]{subsection.4.3.2}{Architekturumsetzung}{section.4.3}% 38
+\BOOKMARK [2][-]{subsection.4.3.3}{ApoCo Datenbankdiagramm}{section.4.3}% 39
+\BOOKMARK [1][-]{section.4.4}{Bluetoothkommunikation, Messung und Persistierung}{chapter.4}% 40
+\BOOKMARK [2][-]{subsection.4.4.1}{Bluetoothkommunikation BodyTel}{section.4.4}% 41
+\BOOKMARK [2][-]{subsection.4.4.2}{Dekodieren einer Messung}{section.4.4}% 42
+\BOOKMARK [2][-]{subsection.4.4.3}{Anzeigen und Speichern der Messwerte}{section.4.4}% 43
+\BOOKMARK [1][-]{section.4.5}{Datensynchronisation mit REST-Schnittstelle}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.5.1}{Datensynchronisation}{section.4.5}% 45
+\BOOKMARK [2][-]{subsection.4.5.2}{REST-Schnittstelle}{section.4.5}% 46
+\BOOKMARK [1][-]{section.4.6}{Barcodescanner}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.7}{ApoCo Use Cases}{chapter.4}% 48
+\BOOKMARK [2][-]{subsection.4.7.1}{Use Case- Diagramm}{section.4.7}% 49
+\BOOKMARK [2][-]{subsection.4.7.2}{Aktoren}{section.4.7}% 50
+\BOOKMARK [2][-]{subsection.4.7.3}{Use Case Kurzbeschreibungen}{section.4.7}% 51
+\BOOKMARK [1][-]{section.4.8}{ApoCo-GUI Gestaltung}{chapter.4}% 52
+\BOOKMARK [2][-]{subsection.4.8.1}{Bedienelemente}{section.4.8}% 53
+\BOOKMARK [2][-]{subsection.4.8.2}{Activity-Wechsel mit Animation}{section.4.8}% 54
+\BOOKMARK [2][-]{subsection.4.8.3}{Views und Struktur der gegenseitigen Aufrufe}{section.4.8}% 55
+\BOOKMARK [0][-]{chapter.5}{Webanwendung: Controlling-Software}{}% 56
+\BOOKMARK [1][-]{section.5.1}{Modellierung}{chapter.5}% 57
+\BOOKMARK [1][-]{section.5.2}{Anwendungslogik}{chapter.5}% 58
+\BOOKMARK [1][-]{section.5.3}{Klasse Calendar}{chapter.5}% 59
+\BOOKMARK [1][-]{section.5.4}{Kalendervisualisierung}{chapter.5}% 60
+\BOOKMARK [1][-]{section.5.5}{Use Cases der Webanwendung}{chapter.5}% 61
+\BOOKMARK [2][-]{subsection.5.5.1}{Use Case-Diagramm}{section.5.5}% 62
+\BOOKMARK [2][-]{subsection.5.5.2}{Aktoren}{section.5.5}% 63
+\BOOKMARK [2][-]{subsection.5.5.3}{Use Case Kurzbeschreibungen}{section.5.5}% 64
+\BOOKMARK [1][-]{section.5.6}{Fundament der Anwendung}{chapter.5}% 65
+\BOOKMARK [1][-]{section.5.7}{Webanwendung-GUI Gestaltung}{chapter.5}% 66
+\BOOKMARK [0][-]{chapter.6}{Zusammenfassung / Ausblick}{}% 67
+\BOOKMARK [0][-]{chapter*.29}{Literaturverzeichnis}{}% 68
+\BOOKMARK [0][-]{chapter*.30}{Abbildungsverzeichnis}{}% 69
+\BOOKMARK [0][-]{chapter*.31}{Listings}{}% 70
+\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 71
+\BOOKMARK [1][-]{section.A.1}{Glossar}{appendix.A}% 72
+\BOOKMARK [1][-]{section.A.2}{CD-Inhalt}{appendix.A}% 73

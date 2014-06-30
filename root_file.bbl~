@@ -1,0 +1,104 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{XML13b}
+
+\bibitem[AS07]{Bluetooth:03}
+Huang Albert~S., \emph{{Bluetooth Essentials for Programmers }}, Cambridge
+  University Press, 2007.
+
+\bibitem[Blu13a]{Bluetooth:01}
+\emph{{Bluetooth}}, Website, 2013,
+  \url{http://www.bluetooth.com/Pages/basics.aspx}; Besucht am 21. August 2013.
+
+\bibitem[Blu13b]{Bluetooth:02}
+\emph{{Bluetooth Special Interest Group (SIG)}}, Website, 2013,
+  \url{https://www.bluetooth.org/en-us}; Besucht am 21. August 2013.
+
+\bibitem[Chr07]{Ajax:02}
+Wenz Christian, \emph{{JavaScript und AJAX, Das umfassende Handbuch (Auflage
+  7)}}, Gallileo Press, 2007.
+
+\bibitem[Chr11]{JavaScript:01}
+\bysame, \emph{{JavaScript, Das umfassende Traning}}, DVD, 2011.
+
+\bibitem[CSS13]{CSS:01}
+\emph{{Cascading Style Sheets}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Cascading_Style_Sheets}; Besucht am 23.
+  August 2013.
+
+\bibitem[EAN13a]{EAN:02}
+\emph{{European Article Number}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/European_Article_Number#EAN-Strichcode_zur_Codierung_der_GTIN_.28ehem._EAN-13.29};
+  Besucht am 22. August 2013.
+
+\bibitem[EAN13b]{EAN:01}
+\emph{{Produkte überall finden}}, Website, 2013,
+  \url{http://ean-suche.org/ean-code-suche/}; Besucht am 22. August 2013.
+
+\bibitem[HTM13]{HTML:01}
+\emph{{Hypertext Markup Language}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Hypertext_Markup_Language}; Besucht am 23.
+  August 2013.
+
+\bibitem[JSO13]{JSON:01}
+\emph{{JavaScript Object Notation}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/JavaScript_Object_Notation}; Besucht am 26.
+  August 2013.
+
+\bibitem[Jö10]{Sicherheit:01}
+Schweänk Jörg, \emph{{Sicherheit und Kryptographie im Internet (Auflage 3)}},
+  Vieweg+ Teubner Verlag, 2010.
+
+\bibitem[KER13]{KERN_PCB}
+\emph{{KERN PCB 6000}}, Website, 2013,
+  \url{http://www.kern-sohn.com/data/zusatzseiten/downloads/z-cb-de-kp-precision-balances.pdf};
+  Besucht am 22. August 2013.
+
+\bibitem[med13]{med_93_42}
+\emph{{Medizinproduktrichtlinie}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Richtlinie_93/42/EWG_%C3%BCber_Medizinprodukte};
+  Besucht am 22. August 2013.
+
+\bibitem[Pic13]{PicoPlug}
+\emph{{Pico Plug}}, Website, 2013,
+  \url{http://www.bluetoothupgrades.de/pico_plug.htm}; Besucht am 22. August
+  2013.
+
+\bibitem[Pre13]{PressureTel}
+\emph{{PressureTel}}, Website, 2013,
+  \url{http://www.bodytel.com/pressuretel.html}; Besucht am 22. August 2013.
+
+\bibitem[RES13]{REST:01}
+\emph{{Representational State Transfer}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Representational_State_Transfer}; Besucht
+  am 23. August 2013.
+
+\bibitem[RWD13]{RWD:01}
+\emph{{Responsive Webdesign}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Responsive_Webdesign}; Besucht am 23.
+  August 2013.
+
+\bibitem[SG12]{PHP_MySQL:01}
+{Stefan, Reimers} and {Gunnar, Thies}, \emph{{PHP 5.4 \& MySQL 5.5 (Auflage
+  4)}}, Gallileo Press, 2012.
+
+\bibitem[Wei13]{WeightTel}
+\emph{{WeightTel}}, Website, 2013, \url{http://www.bodytel.com/weighttel.html};
+  Besucht am 22. August 2013.
+
+\bibitem[XML13a]{XML:01}
+\emph{{Extensible Markup Language}}, Website, 2013,
+  \url{http://de.wikipedia.org/wiki/Extensible_Markup_Language}; Besucht am 25.
+  August 2013.
+
+\bibitem[XML13b]{XML:02}
+\emph{{Websiteentwicklung: XML: Aufbau eines XML-Dokumentes}}, Website, 2013,
+  \url{http://de.wikibooks.org/wiki/Websiteentwicklung:_XML:_Aufbau_eines_XML-Dokumentes};
+  Besucht am 26. August 2013.
+
+\end{thebibliography}
